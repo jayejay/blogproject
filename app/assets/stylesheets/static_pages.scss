@@ -1,11 +1,15 @@
-//body{
-//  background-image: url(image_path('controller_hantel.jpg'));
-//  background-size: cover;
-//  background-attachment: fixed;
-//}
-//
-//#welcome{
-//  text-align: center;
-//  color: white;
-//  margin:25%;
-//}
+*{
+  color:white;
+}
+
+body{
+  background-image: url(image_path('controller_hantel.jpg'));
+  background-size: cover;
+  color: white;
+  background-attachment: fixed;
+}
+
+#welcome{
+  text-align: center;
+  margin:25%;
+}
