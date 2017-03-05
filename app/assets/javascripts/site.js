@@ -8,6 +8,10 @@ $(document).on('turbolinks:load', function () {
         ' | bullist numlist outdent indent | link image',
         toolbar2: "forecolor | backcolor"
     });
+
+
+    $('.alert').delay(2000).fadeOut(1500);
+
 })
 
 

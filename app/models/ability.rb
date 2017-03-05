@@ -33,7 +33,8 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :read, :post
+      can :read, Post
+      can :manage, User, id: user.id
     end
 
 
