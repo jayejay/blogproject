@@ -65,3 +65,5 @@ ActiveRecord::Schema.define(version: 20170308192919) do
   end
 
 end
+
+#TODO: created_at, edited_at,... needs to be set automatically
