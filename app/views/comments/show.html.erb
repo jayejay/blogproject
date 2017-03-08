@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @comment.post_id %>
+</p>
+
+<p>
+  <strong>Author name:</strong>
+  <%= @comment.author_name %>
+</p>
+
+<p>
+  <strong>Author email:</strong>
+  <%= @comment.author_email %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @comment.content %>
+</p>
+
+<p>
+  <strong>Author ip:</strong>
+  <%= @comment.author_ip %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @comment.created_at %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @comment.approved %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @comment.parent_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>
