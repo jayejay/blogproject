@@ -6,7 +6,8 @@ $(document).on('turbolinks:load', function () {
         height: "500px",
         toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify' +
         ' | bullist numlist outdent indent | link image',
-        toolbar2: "forecolor | backcolor"
+        toolbar2: "forecolor | backcolor",
+        paste_data_images: true
     });
 
 
