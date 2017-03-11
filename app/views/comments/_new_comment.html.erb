@@ -1,0 +1,18 @@
+<% if signed_in? %>
+
+    <%= form_for([@post, @post.comments.build], remote: true) do |f| %>
+        <h4>Add a Comment:</h4>
+        <div class="col-md-6">
+          <p>
+            <%= f.label :author_email, "Email" %><br>
+            <%= f.email_field :author_email, class:'form-control' %>
+            <%= f.label :content, "Comments" %><br>
+            <%= f.text_area :content, class:'form-control' %>
+          </p>
+          <p>
+            <%= f.submit "Submit", class:'btn btn-success' %>
+          </p>
+        </div>
+    <% end %>
+
+<% end %>
