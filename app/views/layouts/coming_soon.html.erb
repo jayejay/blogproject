@@ -24,7 +24,7 @@
 
   <body id="coming_soon">
 
-  <%= render partial: "shared/navigation" %>
+  <%#= render partial: "shared/navigation" %>
 
     <% if notice %>
       <p id="notice" class="alert alert-info"><%= notice %></p>
@@ -34,9 +34,8 @@
       <p id="alert" class="alert alert-info"><%= alert %></p>
     <% end %>
 
-    <div class="container">
-      <%= yield %>
-    </div>
+    <%= yield %>
+
   </body>
 
 </html>

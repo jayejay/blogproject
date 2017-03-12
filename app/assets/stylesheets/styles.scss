@@ -1,4 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body{
   margin-top: 50px;
+  background-image: url(image_path("flames6.png"));
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
 }
-//todo: do margin for navigation
+
+//Navigation
+.navbar-default{
+  background-color: black;
+  border:none;
+}
+
+#nav {
+  background: rgb(179,220,237); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(179,220,237,1) 0%, rgba(143,143,143,1) 50%, rgba(188,224,238,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  rgba(179,220,237,1) 0%,rgba(143,143,143,1) 50%,rgba(188,224,238,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  rgba(179,220,237,1) 0%,rgba(143,143,143,1) 50%,rgba(188,224,238,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=0 ); /* IE6-9 */
+
+}
+
+#nav li a{
+  color: black;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#nav li a:hover{
+  color: whitesmoke;
+}
+
+.container{
+  background-color: rgba(255,255,255,0.9);
+
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+
+  border-radius: 0.3%;
+}
+
+.logo{
+  width: 30%;
+  margin: 0 35%;
+}
