@@ -10,10 +10,6 @@ body{
 }
 
 //Navigation
-.navbar-default{
-  background-color: black;
-  border:none;
-}
 
 #nav {
   background: rgb(179,220,237); /* Old browsers */
@@ -32,6 +28,15 @@ body{
 
 #nav li a:hover{
   color: whitesmoke;
+}
+
+.navbar{
+  margin-bottom: 0;
+}
+
+.navbar-default{
+  background: transparent;
+  border:none;
 }
 
 .container{

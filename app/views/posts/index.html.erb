@@ -1,29 +1,30 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody id="post_index">
+<div class="col-md-8">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= link_to 'Show', post, class: 'btn btn-default' %></td>
-        <td><%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %></td>
-        <td><%= link_to 'Destroy', post, class:'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div>
+
+          <div class="row">
+            <h3><%= post.title %></h3>
+            <%= truncate(post.content.html_safe, :length => 400, :escape => false) %>
+            <%= link_to 'weiterlesen', post, class: '' %>
+          </div>
+
+        
+
+
+
+
+        <% if user_signed_in? && current_user.admin? %>
+          <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
+          <%= link_to 'Destroy', post, class:'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
     <% end %>
-  </tbody>
-</table>
+
 
 <br>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to 'New Post', new_post_path %>
+<% end %>
+</div>
 
-<%= link_to 'New Post', new_post_path %>
 
-
-<%#TODO: read more button %>
