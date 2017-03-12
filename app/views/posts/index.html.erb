@@ -1,17 +1,12 @@
 <div class="col-md-8">
     <% @posts.each do |post| %>
       <div>
-
+          <!--todo: post_image_url pic needs to be inserted-->
           <div class="row">
             <h3><%= post.title %></h3>
             <%= truncate(post.content.html_safe, :length => 400, :escape => false) %>
             <%= link_to 'weiterlesen', post, class: '' %>
           </div>
-
-        
-
-
-
 
         <% if user_signed_in? && current_user.admin? %>
           <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
