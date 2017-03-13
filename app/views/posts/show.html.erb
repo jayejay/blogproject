@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
   <%= image_tag @post.image_url.url, class: 'post_main_image thumbnail' %>
   <h3><%= @post.title %></h3>
@@ -13,6 +11,15 @@
 
   <%= link_to 'Back', posts_path %>
 </div>
-<div class="row">
-  <%= render "comments/new_comment" %>
+<div id="new_comment" class="row anchor">
+  <p><%= render "comments/new_comment" %></p>
+
+</div>
+
+<% if notice %>
+  <p id="notice" class="alert alert-info"><%= notice %></p>
+<% end %>
+
+<div id="comments_wrapper">
+  <%= render "comments" %>
 </div>

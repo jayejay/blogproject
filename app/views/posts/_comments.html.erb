@@ -1,0 +1,9 @@
+<div>
+  <% @comments.each do |comment| %>
+      <div id="comment_<%= comment.id  %>" class="row comments">
+        <hr>
+        <p><%= comment.author_email %> <small><em><%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small></p>
+        <p><%= comment.content %></p>
+      </div>
+  <% end %>
+</div>

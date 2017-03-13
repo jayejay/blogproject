@@ -29,15 +29,6 @@
 
     <%= render partial: "shared/navigation" %>
 
-    <% if notice %>
-      <p id="notice" class="alert alert-info"><%= notice %></p>
-    <% end %>
-
-    <% if alert %>
-        <p id="alert" class="alert alert-info"><%= alert %></p>
-    <% end %>
-
-
     <div class="container">
       <div class="div_logo">
         <%= image_tag 'logo5.png', class: 'logo' %>
@@ -50,6 +41,14 @@
       <div class="col-md-4 side_stuff">
         <%= render 'shared/side_stuff' %>
       </div>
+
+      <%# if notice %>
+          <!--<p id="notice" class="alert alert-info"><%#= notice %></p>-->
+      <%# end %>
+
+      <% if alert %>
+          <p id="alert" class="alert alert-info"><%= alert %></p>
+      <% end %>
     </div><!-- end container-->
 
   </body>
