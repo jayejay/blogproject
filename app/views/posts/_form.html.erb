@@ -11,10 +11,19 @@
     </div>
   <% end %>
 
+  <h3>Set Main Post Pic</h3>
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.file_field :image_url %>
+  </div>
+
+  <h3>Set Post Title</h3>
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
+
+  <h3>Set Post Content</h3>
 
   <div class="field">
     <%= f.label :content %>
@@ -28,10 +37,7 @@
     <% end %>
   </div>
 
-
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-
-<!--todo: image_uploader needed-->

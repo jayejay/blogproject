@@ -65,5 +65,3 @@ ActiveRecord::Schema.define(version: 20170308192919) do
   end
 
 end
-
-# todo: image_url for posts

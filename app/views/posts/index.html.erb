@@ -1,7 +1,6 @@
 <div class="col-md-8">
     <% @posts.each do |post| %>
       <div>
-          <!--todo: post_image_url pic needs to be inserted-->
           <div class="row">
             <h3><%= post.title %></h3>
             <%= truncate(post.content.html_safe, :length => 400, :escape => false) %>
