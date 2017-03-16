@@ -29,12 +29,21 @@
     <%= f.label :content %>
     <%= f.text_area :content, class: 'form-control textarea' %>
   </div>
+  <br>
 
   <div class="field">
     <%= f.label :tag_id %>
     <%= f.select(:tag_id) do%>
       <%= content_tag(:tag, 1) %>
     <% end %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :section_id %>
+    <%#= f.select(:section_id) do%>
+      <%#= options_from_collection_for_select(Section.all, :id, :name) %>
+      <%= f.collection_select :section_id, Section.all, :id, :name  %>
+    <%# end %>
   </div>
 
   <div class="actions">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316171358) do
+ActiveRecord::Schema.define(version: 20170316172907) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170316171358) do
     t.datetime "last_edit_at"
     t.datetime "updated_at",                                   null: false
     t.boolean  "active"
+    t.integer  "section_id"
   end
 
   create_table "sections", force: :cascade do |t|
