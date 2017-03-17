@@ -17,23 +17,21 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav nav-left">
 
-        <% if user_signed_in? %>
-          <li><%= link_to('gaming', posts_gaming_path) %></li>
+          <li><%= link_to('gaming',  posts_gaming_path) %></li>
           <li><%= link_to('sports', posts_sports_path) %></li>
           <li><%= link_to('nutrition', posts_nutrition_path) %></li>
 
-          <li><%= link_to('logout', destroy_user_session_path, :method => :delete) %></li>
-
-          <% if current_user.admin?  %>
+        <% if user_signed_in? && current_user.admin? %>
+          <%if user_signed_in? %>
             <li><%= link_to('users', users_path) %></li>
-          <% end %>
-
-        <% else %>
-
-          <li><%= link_to('login', new_user_session_path) %></li>
-
+            <li><%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %></li>
+          <% else %>
+            <li><%= link_to('LOGIN', new_user_session_path) %></li>
+          <% end  %>
         <% end %>
+
       </ul>
+
     </div><!--end nav-->
   </div><!--end nav container-->
 </nav><!-- end navbar-->

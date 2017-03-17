@@ -9,8 +9,9 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :read, Post
-      can :manage, User, id: user.id
+      #todo: posts not readable
+      #can :read, Post
+      #can :manage, User, id: user.id
     end
   end
 end
