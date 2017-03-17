@@ -10,12 +10,18 @@
         <span class="icon-bar"></span>
       </button>
       <div class="home nav navbar-nav navbar-collapse collapse">
-        <li><%= link_to('home', static_pages_welcome_path) %></li>
+        <li>
+          <%#= link_to('home', static_pages_welcome_path) %>
+
+          <a href="<%= static_pages_welcome_path %>" class="logo-link navbar-left">
+            <%= image_tag 'logocarbon_initialen.png'%>
+          </a>
+        </li>
       </div> <!--end home -->
     </div><!--end navbar-header -->
 
     <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav nav-left">
+      <ul class="nav navbar-nav nav-right">
 
           <li><%= link_to('gaming',  posts_gaming_path) %></li>
           <li><%= link_to('sports', posts_sports_path) %></li>
