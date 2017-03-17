@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :posts do
-    resources :comments
-  end
+  get 'posts/gaming', to: 'categories#gaming_index'
+  get 'posts/sports', to: 'categories#sports_index'
+  get 'posts/nutrition', to: 'categories#nutrition_index'
+  get 'posts/fun', to: 'categories#fun_index'
 
-
+  resources :posts
 
   devise_for :users
   resources :users

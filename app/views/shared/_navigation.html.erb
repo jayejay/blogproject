@@ -18,9 +18,10 @@
       <ul class="nav navbar-nav nav-left">
 
         <% if user_signed_in? %>
-          <li><%= link_to('gaming', posts_path(:section_id => 1)) %></li>
-          <li><%= link_to('sporting', posts_path(:section_id => 2)) %></li>
-          <li><%= link_to('nutrition', posts_path(:section_id => 3)) %></li>
+          <li><%= link_to('gaming', posts_gaming_path) %></li>
+          <li><%= link_to('sports', posts_sports_path) %></li>
+          <li><%= link_to('nutrition', posts_nutrition_path) %></li>
+
           <li><%= link_to('logout', destroy_user_session_path, :method => :delete) %></li>
 
           <% if current_user.admin?  %>

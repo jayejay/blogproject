@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.where(section_id: params[:section_id])
+    @posts = Post.all
   end
 
   # GET /posts/1
