@@ -28,11 +28,11 @@
   <body>
 
     <%= render partial: "shared/navigation" %>
-
+    <div class="container div_logo">
+      <%= image_tag 'logocarbon1.png', class: 'logo' %>
+    </div>
     <div class="container">
-      <div class="div_logo">
-        <%= image_tag 'logo5.png', class: 'logo' %>
-      </div>
+
       <div class="col-md-8 content">
         <div class="content_wrapper">
           <%= yield %>
