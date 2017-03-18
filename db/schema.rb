@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 20170317170704) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
-    t.text     "author_name"
-    t.text     "author_email"
+    t.string   "author_name"
+    t.string   "author_email"
     t.text     "content"
-    t.text     "author_ip"
-    t.integer  "approved"
+    t.string   "author_ip"
+    t.boolean  "approved"
     t.integer  "parent_id"
     t.integer  "user_id"
-    t.text     "updated_at",   null: false
+    t.datetime "updated_at",   null: false
     t.datetime "created_at"
   end
 
@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20170317170704) do
     t.integer  "tag_id"
     t.integer  "author_id"
     t.datetime "published_at"
-    t.datetime "created_at",   default: '2017-03-11 16:45:54', null: false
+    t.datetime "created_at",   null: false
     t.datetime "last_edit_at"
-    t.datetime "updated_at",                                   null: false
+    t.datetime "updated_at",   null: false
     t.boolean  "active"
     t.integer  "category_id"
   end
@@ -51,14 +51,14 @@ ActiveRecord::Schema.define(version: 20170317170704) do
     t.string   "status"
     t.boolean  "admin",                  default: false
     t.boolean  "moderator",              default: false
-    t.datetime "created_at",             default: '2017-03-11 16:45:54', null: false
-    t.datetime "updated_at",                                             null: false
-    t.string   "email",                  default: "",                    null: false
-    t.string   "encrypted_password",     default: "",                    null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,                     null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
