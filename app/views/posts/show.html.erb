@@ -2,6 +2,11 @@
   <%= image_tag @post.image_url.url, class: 'post_main_image' %>
   <h3><%= @post.title %></h3>
   <p><%= @post.content.html_safe %></p>
+  <p>
+    <% @post.tags.each do |tag| %>
+        <a href="<%= tag_path(tag) %>"><%= tag.name %></a>
+    <% end %>
+  </p>
 </div>
 
 <div class="row">

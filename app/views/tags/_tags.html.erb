@@ -1,0 +1,7 @@
+<div class="form-group">
+  <% @tags.each do |tag| %>
+    <%= label_tag tag.name %>
+    <%= check_box_tag(tag)  %>
+  <% end %>
+</div>
+

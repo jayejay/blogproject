@@ -11,6 +11,8 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
+    @posts = Post.includes(:tags).where(tags: {id: params[:id]})
+    render 'posts/index'
   end
 
   # GET /tags/new

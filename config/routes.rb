@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'posts/nutrition', to: 'categories#nutrition_index'
   get 'posts/fun', to: 'categories#fun_index'
 
+
+
   resources :posts
 
   devise_for :users

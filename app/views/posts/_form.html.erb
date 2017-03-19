@@ -29,15 +29,8 @@
     <%= f.label :content %>
     <%= f.text_area :content, class: 'form-control textarea' %>
   </div>
-  <br>
 
-  <div class="field">
-    <%= f.label :tag_id %>
-    <%= f.select(:tag_id) do%>
-      <%= content_tag(:tag, 1) %>
-    <% end %>
-  </div>
-  <br>
+  <h3>Set Category</h3>
   <div class="field">
     <%= f.label :category_id %>
     <%#= f.select(:section_id) do%>
@@ -45,6 +38,14 @@
       <%= f.collection_select :category_id, Category.all, :id, :name  %>
     <%# end %>
   </div>
+
+  <h3>Set Tags</h3>
+  <div class="field">
+
+    <%= f.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name) %>
+
+  </div>
+  <br>
 
   <div class="actions">
     <%= f.submit %>
