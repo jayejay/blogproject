@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
 
   def gaming_index
     category = Category.where(name: 'Gaming')

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :tags
+
   get 'posts/gaming', to: 'categories#gaming_index'
   get 'posts/sports', to: 'categories#sports_index'
   get 'posts/nutrition', to: 'categories#nutrition_index'
