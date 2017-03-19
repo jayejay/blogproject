@@ -1,21 +1,25 @@
 
-    <% @posts.each do |post| %>
-          <div class="row">
-            <div class="col-md-6">
-              <h3><%= post.title %></h3>
-              <%= truncate(post.content.html_safe, :length => 400, :escape => false) %>
-              <%= link_to 'weiterlesen', post, class: '' %> <br> <br>
-              <% if user_signed_in? && current_user.admin? %>
-                  <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
-                  <%= link_to 'Destroy', post, class:'btn btn-default', method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>
-            </div>
-            <div class="col-md-6">
-              <%= image_tag post.image_url, class: 'post_preview_image' %>
-            </div>
-          </div>
-        <hr>
-    <% end %>
+<% @posts.each do |post| %>
+      <div class="row">
+        <div class="col-md-6">
+          <h3><%= post.title %></h3>
+          <% content = post.content.html_safe %>
+          <%= content.split(/\s+/, 50+1)[0...50].join(' ') + '...' %>
+
+          <%= link_to 'weiterlesen', post, class: '' %> <br> <br>
+
+          <% if user_signed_in? && current_user.admin? %>
+              <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
+              <%= link_to 'Destroy', post, class:'btn btn-default', method: :delete, \
+                          data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
+          <% end %>
+        </div>
+        <div class="col-md-6">
+          <%= image_tag post.image_url, class: 'post_preview_image' %>
+        </div>
+      </div>
+    <hr>
+<% end %>
 
 
 <br>
