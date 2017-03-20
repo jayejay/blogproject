@@ -5,8 +5,8 @@
 
       <h3><%= post.title %></h3>
 
-      <%= post.short_preview_of_content(post.content, 50).html_safe + '...' %>
-
+      <%#= post.short_preview_of_content(post.content, 50).html_safe + '...' %>
+      <%= truncate_html(post.content, length: 350, omission: '...')  %>
       <%= link_to 'weiterlesen', post, class: '' %> <br> <br>
 
       <% if user_signed_in? && current_user.admin? %>
