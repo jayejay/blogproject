@@ -76,6 +76,9 @@ gem 'rails-controller-testing'
 
 gem 'bcrypt-ruby'
 
+gem 'truncate_html'
+
+
 
 
 
