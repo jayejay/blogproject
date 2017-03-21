@@ -27,7 +27,8 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'form-control textarea' %>
+    <%= f.text_area :content, class: 'tinymce', :rows => 40, :cols => 120 %>
+    <%= tinymce %>
   </div>
 
   <h3>Set Category</h3>

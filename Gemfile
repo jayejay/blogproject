@@ -78,7 +78,7 @@ gem 'bcrypt-ruby'
 
 gem 'truncate_html'
 
-
+gem 'tinymce-rails'
 
 
 

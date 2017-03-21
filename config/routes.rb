@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get 'posts/nutrition', to: 'categories#nutrition_index'
   get 'posts/fun', to: 'categories#fun_index'
 
-
-
   resources :posts
 
   devise_for :users
@@ -18,6 +16,8 @@ Rails.application.routes.draw do
   root 'static_pages#welcome'
 
   get 'static_pages/welcome'
+
+  post '/tinymce_assets', to: 'tinymce_assets#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
