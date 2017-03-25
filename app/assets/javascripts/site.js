@@ -9,8 +9,9 @@ $(document).on('turbolinks:load', function () {
     //     toolbar2: "forecolor | backcolor | uploadimage",
     //     paste_data_images: true
     // });
+
     $(function() {
-        $('textarea.tinymce').tinymce({
+        $('.textarea').tinymce({
             plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker uploadimage',
             height: "500px",
             toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify' +
