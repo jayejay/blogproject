@@ -27,8 +27,9 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'tinymce textarea', :rows => 25, :plugins => ['uploadimage'] %>
-    <%= tinymce %>
+    <%= f.text_area :content, class: 'tinymce textarea' , :rows => 25, :plugins => ['uploadimage']%>
+    <%#= f.text_area :content, class: 'tinymce textarea' , :rows => 25, :plugins => ['uploadimage']%>
+    <%#= tinymce %>
   </div>
 
   <h3>Set Category</h3>
