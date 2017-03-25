@@ -27,17 +27,15 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'tinymce', :rows => 40, :cols => 120 %>
+    <%= f.text_area :content, class: 'textarea tinymce', :rows => '30' %>
     <%= tinymce %>
   </div>
 
   <h3>Set Category</h3>
   <div class="field">
     <%= f.label :category_id %>
-    <%#= f.select(:section_id) do%>
-      <%#= options_from_collection_for_select(Section.all, :id, :name) %>
-      <%= f.collection_select :category_id, Category.all, :id, :name  %>
-    <%# end %>
+    <%= f.collection_select :category_id, Category.all, :id, :name  %>
+
   </div>
 
   <h3>Set Tags</h3>
