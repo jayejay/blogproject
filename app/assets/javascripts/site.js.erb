@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function () {
 
     $(function() {
         $('.textarea').tinymce({
-            plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker',
+            plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker table',
             external_plugins: {
                 "uploadimage": "<%= javascript_path('tinymce/js/tinymce/plugins/uploadimage/plugin.min.js') %>"
             },
@@ -20,7 +20,7 @@ $(document).on('turbolinks:load', function () {
             height: "500px",
             toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify' +
             ' | bullist numlist outdent indent | link',
-            toolbar2: "forecolor | backcolor | uploadimage",
+            toolbar2: "forecolor | backcolor | uploadimage | table",
             paste_data_images: true
         });
     });
