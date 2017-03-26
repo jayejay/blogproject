@@ -45,18 +45,17 @@
     <%= f.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name) %>
 
   </div>
-  <br>
+
     <h3>Rating</h3>
     <%= f.fields_for :rating do |rating_form| %>
         <%= rating_form.label :gameplay %>
-        <%= rating_form.select :gameplay, options_for_select((0..10)), @rating.gameplay  %>
+        <%= rating_form.select :gameplay, options_for_select((0..10), @rating.gameplay)  %>
         <%= rating_form.label :graphics %>
         <%= rating_form.select :graphics, options_for_select((0..10),@rating.graphics )%>
         <%= rating_form.label :sound %>
         <%= rating_form.select :sound, options_for_select((0..10), @rating.sound )%>
         <%= rating_form.label :price_performance %>
         <%= rating_form.select :price_performance, options_for_select((0..10), @rating.price_performance )%>
-        <br>
         <%= rating_form.label :innovation %>
         <%= rating_form.select :innovation, options_for_select((0..10), @rating.innovation )%>
     <% end %>

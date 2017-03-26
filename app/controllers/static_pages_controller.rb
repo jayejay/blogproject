@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def welcome
-    render :layout => 'coming_soon'
+    render :layout => 'user_interface'
   end
 
 end

@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index]
   load_and_authorize_resource
 
-
   # GET /posts
   # GET /posts.json
   def index
@@ -14,17 +13,22 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     #@comments = @post.comments.order("created_at DESC")
+    @rating = @post.rating
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @rating = @post.build_rating
     @tags = Tag.all
+    render :layout => 'user_interface'
   end
 
   # GET /posts/1/edit
   def edit
+    @rating = @post.rating
     @tags = Tag.all
+    render :layout => 'user_interface'
   end
 
   # POST /posts
@@ -75,6 +79,13 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :image_url, {tag_ids:[]}, :category_id)
+      params.require(:post).permit(:title, :content, :image_url, \
+        {tag_ids:[]}, :category_id, rating_attributes: [:id, :post_id, :gameplay, :graphics, :sound,\
+          :price_performance, :innovation, :total])
     end
+end
+
+def rating_attributes(rating_attrs)
+  self.rating = Client.find_or_initialize_by_id(rating_attrs.delete(:id))
+  self.rating.attributes = rating_attrs
 end
