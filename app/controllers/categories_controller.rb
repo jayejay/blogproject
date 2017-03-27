@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource :post
 
   def gaming_index
     category = Category.where(name: 'Gaming')

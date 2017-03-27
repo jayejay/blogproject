@@ -5,13 +5,13 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    @tags = Tag.all.order('name')
   end
 
   # GET /tags/1
   # GET /tags/1.json
   def show
-    @posts = Post.includes(:tags).where(tags: {id: params[:id]})
+    @posts = Post.includes(:tags).where(tags: {id: params[:id]}).order(created_at: :desc)
     render 'posts/index'
   end
 

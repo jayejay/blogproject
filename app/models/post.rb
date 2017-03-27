@@ -9,12 +9,6 @@ class Post < ApplicationRecord
 
   mount_uploader :image_url, ImageUploader
 
-  def short_preview_of_content(original_text, n)
-    str = original_text
-    return str.split(/\s+/, n+1)[0...n].join(' ')
-  end
-
-
   def get_rating_total
     unless rating.nil?
       total = rating.gameplay + rating.graphics + rating.sound + rating.price_performance + rating.innovation
@@ -22,7 +16,22 @@ class Post < ApplicationRecord
     else
       total = 0
     end
+  end
 
+  def get_rating(column_value)
+    unless column_value.nil?
+      column_value
+    else
+      0
+    end
+  end
+
+  def self.search(search_term)
+    if Rails.env.development?
+      Post.where("title LIKE ?", "%#{search_term}%")
+    else
+      Post.where("title ILIKE ?", "%#{search_term}%")
+    end
   end
 
 end

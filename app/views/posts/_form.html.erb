@@ -49,7 +49,7 @@
     <h3>Rating</h3>
     <%= f.fields_for :rating do |rating_form| %>
         <%= rating_form.label :gameplay %>
-        <%= rating_form.select :gameplay, options_for_select((0..10), @rating.gameplay)  %>
+        <%= rating_form.select :gameplay, options_for_select((0..10), @post.get_rating(@rating.gameplay))  %>
         <%= rating_form.label :graphics %>
         <%= rating_form.select :graphics, options_for_select((0..10),@rating.graphics )%>
         <%= rating_form.label :sound %>

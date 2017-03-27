@@ -6,7 +6,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all.order(created_at: :desc)
+    if params[:q]
+      search_term = params[:q]
+      @posts = Post.search(search_term)
+    else
+      @posts = Post.all.order(created_at: :desc)
+    end
+
   end
 
   # GET /posts/1
@@ -22,6 +28,7 @@ class PostsController < ApplicationController
     @rating = @post.build_rating
     @tags = Tag.all
     render :layout => 'user_interface'
+    #todo: control if db is filled with zeros
   end
 
   # GET /posts/1/edit
