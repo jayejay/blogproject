@@ -4,10 +4,18 @@
     <%=	text_field_tag(:q, nil, class:'form-control') %>
     <%= submit_tag("Search", class:'btn btn-default')%>
 <% end %>
-
+<hr>
 <h3>Tags</h3>
 <% Tag.first(10).each do |t| %>
     <%#= t.name %>
     <%= link_to t.name, tag_path(t.id) %>
 <% end %>
-<%= link_to 'more', tags_path %>
+<%= link_to '...more', tags_path %>
+<hr>
+<div class="">
+  <h3>New Post</h3>
+  <h4><%= Post.first.title %></h4>
+  <%= image_tag Post.first.image_url, class:'new_post_image' %>
+  <%= truncate_html(Post.first.content, length: 150, omission: '...')  %>
+  <%= link_to 'weiterlesen', post_path(Post.first.id) %>
+</div>
