@@ -6,15 +6,21 @@
 <% end %>
 <hr>
 <h3>Tags</h3>
-<% Tag.first(10).each do |t| %>
-  <%= link_to t.name, tag_path(t.id) %>
-<% end %>
+  <table>
+
+  <% Tag.joins(:posts).group('posts_tags.tag_id').order('COUNT(*) DESC').each do |t| %>
+    <tr>
+      <td><%= link_to t.name + ' (' + t.posts.count.to_s + ')', tag_path(t.id) %></td>
+    </tr>
+  <% end %>
+  </table>
 <%= link_to '...more', tags_path %>
 <hr>
+
 <div class="">
   <h3>New Post</h3>
   <h4><%= Post.last.title %></h4>
   <%= image_tag Post.last.image_url, class:'new_post_image' %>
   <%= truncate_html(Post.last.content, length: 150, omission: '...')  %>
-  <%= link_to 'weiterlesen', post_path(Post.first.id) %>
+  <%= link_to 'weiterlesen', post_path(Post.last.id) %>
 </div>
