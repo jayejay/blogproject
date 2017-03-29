@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       search_term = params[:q]
       @posts = Post.search(search_term)
     else
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.where(active: 1).order(created_at: :desc)
     end
 
   end
@@ -86,7 +86,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :content, :image_url, \
+      params.require(:post).permit(:title, :content, :image_url, :active, \
         {tag_ids:[]}, :category_id, rating_attributes: [:id, :post_id, :gameplay, :graphics, :sound,\
           :price_performance, :innovation, :total])
     end

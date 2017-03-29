@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'posts/sports', to: 'categories#sports_index'
   get 'posts/nutrition', to: 'categories#nutrition_index'
   get 'posts/fun', to: 'categories#fun_index'
+  get 'posts/unpublished', to: 'categories#unpublished_index'
 
   resources :posts
 

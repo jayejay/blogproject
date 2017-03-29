@@ -28,9 +28,9 @@ class Post < ApplicationRecord
 
   def self.search(search_term)
     if Rails.env.development?
-      Post.where("title LIKE ?", "%#{search_term}%")
+      Post.where("title LIKE ? AND active = 1", "%#{search_term}%")
     else
-      Post.where("title ILIKE ?", "%#{search_term}%")
+      Post.where("title ILIKE ? AND active = 1", "%#{search_term}%")
     end
   end
 

@@ -10,12 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <h3>Main Post Pic</h3>
-  <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.file_field :image_url %>
-  </div>
+<div class="col-md-8">
 
   <h3>Title</h3>
   <div class="field">
@@ -32,14 +27,27 @@
     <%#= tinymce %>
   </div>
 
-  <h3>Category</h3>
+</div>
+<div class="col-md-4">
+
+  <h3>Main Post Pic</h3>
+
   <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.file_field :image_url %>
+  </div>
+
+  <h3>Category</h3>
+
+  <div class="field">
+
     <%= f.label :category_id %>
     <%= f.collection_select :category_id, Category.all, :id, :name  %>
 
   </div>
 
   <h3>Tags</h3>
+
   <div class="field">
 
     <%= f.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name) %>
@@ -47,19 +55,59 @@
   </div>
 
     <h3>Rating</h3>
-    <%= f.fields_for :rating do |rating_form| %>
-        <%= rating_form.label :gameplay %>
-        <%= rating_form.select :gameplay, options_for_select((0..10), @post.get_rating(@rating.gameplay))  %>
-        <%= rating_form.label :graphics %>
-        <%= rating_form.select :graphics, options_for_select((0..10),@rating.graphics )%>
-        <%= rating_form.label :sound %>
-        <%= rating_form.select :sound, options_for_select((0..10), @rating.sound )%>
-        <%= rating_form.label :price_performance %>
-        <%= rating_form.select :price_performance, options_for_select((0..10), @rating.price_performance )%>
-        <%= rating_form.label :innovation %>
-        <%= rating_form.select :innovation, options_for_select((0..10), @rating.innovation )%>
-    <% end %>
-  <div class="actions">
-    <%= f.submit %>
+      <table class="table table-striped">
+        <%= f.fields_for :rating do |rating_form| %>
+            <tr>
+              <td>
+                <%= rating_form.label :gameplay %>
+              </td>
+              <td>
+                <%= rating_form.select :gameplay, options_for_select((0..10), @post.get_rating(@rating.gameplay))  %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= rating_form.label :graphics %>
+              </td>
+              <td>
+                <%= rating_form.select :graphics, options_for_select((0..10),@rating.graphics )%>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= rating_form.label :sound %>
+              </td>
+              <td>
+                <%= rating_form.select :sound, options_for_select((0..10), @rating.sound )%>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= rating_form.label :price_performance %>
+              </td>
+              <td>
+                <%= rating_form.select :price_performance, options_for_select((0..10), @rating.price_performance )%>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <%= rating_form.label :innovation %>
+              </td>
+              <td>
+                <%= rating_form.select :innovation, options_for_select((0..10), @rating.innovation )%>
+              </td>
+
+            </tr>
+        <% end %>
+      </table>
+
+  <div class="field">
+    <%= f.label :active, 'veröffentlichen' %>
+    <%= f.check_box :active %>
   </div>
+
+  <div class="actions">
+    <%= f.submit 'senden', :class => 'btn btn-success' %>
+  </div>
+</div>
 <% end %>

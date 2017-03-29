@@ -27,9 +27,13 @@
           <li><%= link_to('sports', posts_sports_path) %></li>
           <li><%= link_to('nutrition', posts_nutrition_path) %></li>
 
+
         <% if user_signed_in? && current_user.admin? %>
+            <li><%= link_to 'Unveröffentlichte Beiträge', posts_unpublished_path, class: 'hvr-radial-out' %></li>
+            <li><%= link_to 'Tags', tags_path, class: 'hvr-radial-out' %></li>
+
           <%if user_signed_in? %>
-            <li><%= link_to('users', users_path) %></li>
+            <li><%= link_to 'Benutzer', users_path, class: 'hvr-radial-out' %></li>
             <li><%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %></li>
           <% else %>
             <li><%= link_to('LOGIN', new_user_session_path) %></li>

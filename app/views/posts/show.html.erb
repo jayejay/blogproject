@@ -4,7 +4,7 @@
   <p><%= @post.content.html_safe %></p>
   <p>
     <% @post.tags.each do |tag| %>
-        <a href="<%= tag_path(tag) %>"><%= tag.name %></a>
+        <a href="<%= tag_path(tag) %>"><%= '<' + tag.name + '>' %></a>
     <% end %>
   </p>
 </div>
