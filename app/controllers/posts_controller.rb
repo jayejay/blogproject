@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       search_term = params[:q]
       @posts = Post.search(search_term)
     else
-      @posts = Post.where(active: 1).order(created_at: :desc)
+      @posts = Post.where(active: true).order(created_at: :desc)
     end
 
   end
