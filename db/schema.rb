@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325184132) do
+ActiveRecord::Schema.define(version: 20170402180114) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20170325184132) do
     t.string   "content"
     t.string   "image_url"
     t.integer  "tag_id"
-    t.integer  "author_id"
+    t.integer  "user_id"
     t.datetime "published_at"
     t.datetime "created_at",   default: '2017-03-11 16:45:54', null: false
     t.datetime "last_edit_at"

@@ -1,6 +1,7 @@
 <% if user_signed_in? && current_user.admin? %>
     <%= link_to 'New Post', new_post_path %>
 <% end %>
+
 <div id="posts">
   <%= render @posts  %>
 </div>

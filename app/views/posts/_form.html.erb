@@ -22,13 +22,21 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'tinymce textarea' , :rows => 25, :plugins => ['uploadimage']%>
-    <%#= f.text_area :content, class: 'tinymce textarea' , :rows => 25, :plugins => ['uploadimage']%>
-    <%#= tinymce %>
+    <%= f.text_area :content, class: 'tinymce textarea' , :rows => 30, :plugins => ['uploadimage']%>
   </div>
 
 </div>
-<div class="col-md-4">
+<div class="col-md-4 post_form_sidebar">
+
+  <h3>Autor</h3>
+
+  <div class="field">
+
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :nick_name, {:selected => current_user.id}  %>
+
+  </div>
+
 
   <h3>Main Post Pic</h3>
 
@@ -100,6 +108,12 @@
             </tr>
         <% end %>
       </table>
+
+  <h3>Veröffentlichen</h3>
+  <div class="field">
+    <%= f.label :published_at, 'Veröffentlichungsdatum'%>
+    <%= f.date_field :published_at, :value => Time.now.strftime('%d.%m.%Y') %>
+  </div>
 
   <div class="field">
     <%= f.label :active, 'veröffentlichen' %>
