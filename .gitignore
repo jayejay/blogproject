@@ -6,6 +6,8 @@
 
 .idea/*
 
+public/uploads/*
+
 # Ignore bundler config.
 /.bundle
 
