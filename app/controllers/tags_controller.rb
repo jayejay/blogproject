@@ -11,7 +11,7 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
-    @posts = Post.includes(:tags).where(tags: {id: params[:id]}).order(created_at: :desc)\
+    @posts = Post.includes(:tags).where(tags: {id: params[:id]}, posts: {active: true}).order(created_at: :desc)\
         .paginate(page: params[:page], per_page: 4)
     render 'posts/index'
   end
