@@ -10,9 +10,12 @@ class PostsController < ApplicationController
       search_term = params[:q]
       @posts = Post.search(search_term)
     else
-      @posts = Post.where(active: true).order(created_at: :desc)
+      @posts = Post.where(active: true).order(created_at: :desc).paginate(page: params[:page], per_page: 3)
     end
-
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /posts/1

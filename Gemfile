@@ -80,7 +80,7 @@ gem 'truncate_html'
 
 gem 'tinymce-rails'
 
-
+gem 'will_paginate-bootstrap'
 
 
 

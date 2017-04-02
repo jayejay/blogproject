@@ -1,30 +1,13 @@
 <% if user_signed_in? && current_user.admin? %>
     <%= link_to 'New Post', new_post_path %>
 <% end %>
-<% @posts.each do |post| %>
-  <div class="row thumbnail">
-    <div class="col-md-6">
+<div id="posts">
+  <%= render @posts  %>
+</div>
 
-      <h3><%= post.title %></h3>
-
-      <%#= post.short_preview_of_content(post.content, 50).html_safe + '...' %>
-      <%= truncate_html(post.content, length: 300, omission: '...')  %>
-      <%= link_to 'weiterlesen', post, class: '' %> <br> <br>
-
-      <% if user_signed_in? && current_user.admin? %>
-          <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
-      <% end %>
-
-    </div>
-    <div class="col-md-6">
-      <%= image_tag post.image_url, class: 'post_preview_image' %>
-    </div>
-  </div>
-  <hr>
-<% end %>
-
-
+<div id="infinite-scrolling">
+  <%= will_paginate @posts,  renderer: BootstrapPagination::Rails %>
+</div>
 <br>
 
 
