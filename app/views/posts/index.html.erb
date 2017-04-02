@@ -5,9 +5,15 @@
   <%= render @posts  %>
 </div>
 
-<div id="infinite-scrolling">
+<div id="with-button">
   <%= will_paginate @posts,  renderer: BootstrapPagination::Rails %>
 </div>
+
+
+<% if @posts.next_page %>
+    <div id="load_more_posts" class="btn btn-primary btn-lg">Weitere Beiträge</div>
+<% end %>
+
 <br>
 
 

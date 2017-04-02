@@ -93,3 +93,8 @@ a{
 .separator{
   margin: 0 auto;
 }
+
+#load_more_posts {
+  display: none;
+  margin-bottom: 10px; /* Some margin to separate it from the footer */
+}
