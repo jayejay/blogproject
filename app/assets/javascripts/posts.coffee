@@ -9,7 +9,7 @@ jQuery ->
     return
   return###
 
-jQuery ->
+$(document).on "turbolinks:load", ->
 
   if $('#with-button').length > 0
     $('.pagination').hide()
