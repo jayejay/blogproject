@@ -1,30 +1,45 @@
-<h3>Search</h3>
+<h3>Suche</h3>
 
 <%=	 form_tag('/posts', method:'get', class:'form-group', role:'search') do %>
-    <%=	text_field_tag(:q, nil, class:'form-control') %>
-    <%= submit_tag("suchen", class:'btn btn-default')%>
+
+    <div class="form-group label-floating">
+      <%= label :q, 'Suchen nach', class: 'control-label' %>
+      <%=	text_field_tag(:q, nil, class:'form-control', ) %>
+      <%= submit_tag("suchen", class:'btn btn-default')%>
+    </div>
 <% end %>
+
 <%= image_tag image_path('trennstrich.png'), class: 'separator img-responsive' %>
-<h3>Tags</h3>
+
+<div class="tags">
+  <h3>Tags</h3>
+
   <table>
-    <% Tag.joins(:posts).group('tags.id').order('COUNT(*) DESC').each do |t| %>
+    <% Tag.joins(:posts).group('tags.id').where(:posts => {:active => true}).order('COUNT(*) DESC').each do |t| %>
       <tr>
-        <td><%= link_to t.name + ' (' + t.posts.count.to_s + ')', tag_path(t.id) %></td>
+        <td><%= link_to t.name + ' (' + t.posts.where(:posts => {:active => true}).count.to_s + ')', tag_path(t.id) %></td>
       </tr>
     <% end %>
   </table>
-<%= link_to '...mehr', tags_path %>
+
+  <%= link_to '...mehr', tags_path %>
+
+</div>
+
 
 <%= image_tag image_path('trennstrich.png'), class: 'separator img-responsive' %>
 
-<div class="">
+<div class="newest_post">
+
   <h3>Neuester Beitrag</h3>
+
   <% post = Post.where(active: true).last %>
+
   <% unless post.nil?%>
     <h4><%= post.title %></h4>
     <%#= image_tag post.image_url, class:'new_post_image' %>
     <%= truncate_html(post.content, length: 150, omission: '...')  %>
-    <%= link_to 'weiterlesen', post_path(post.id) %>
+    <%= link_to 'weiterlesen', post_path(post.id), class: 'btn btn-info' %>
   <% end %>
 
 </div>

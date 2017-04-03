@@ -12,11 +12,12 @@
 
     <%#= post.short_preview_of_content(post.content, 50).html_safe + '...' %>
     <%= truncate_html(post.content, length: 300, omission: '...')  %>
-    <%= link_to 'weiterlesen', post, class: '' %> <br> <br>
+    <%= link_to 'weiterlesen', post, class: 'btn btn-info' %> <br> <br>
 
     <% if user_signed_in? && current_user.admin? %>
         <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'%>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },\
+            class: 'btn btn-danger pull-right'%>
     <% end %>
 
   </div>
