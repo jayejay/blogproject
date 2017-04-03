@@ -28,8 +28,9 @@
   </head>
 
   <body id="coming_soon">
-
-  <%= render partial: "shared/navigation" %>
+  <% if user_signed_in? && current_user.admin?  %>
+    <%= render partial: "shared/navigation" %>
+  <% end %>
 
     <% if notice %>
       <p id="notice" class="alert alert-info"><%= notice %></p>
