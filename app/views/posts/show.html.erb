@@ -1,12 +1,12 @@
-<div class="row thumbnail">
-  <%= image_tag @post.image_url.url, class: 'post_main_image' %>
-  <h3><%= @post.title %></h3>
-  <p><%= @post.content.html_safe %></p>
-  <p>
-    <% @post.tags.each do |tag| %>
-        <a href="<%= tag_path(tag) %>"><%= '<' + tag.name + '>' %></a>
-    <% end %>
-  </p>
+<div class="row">
+  <%= image_tag @post.image_url.url, class: 'img img-raised post_main_image' %>
+  <%= content_tag(:h3,@post.title, class: 'title') %>
+  <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
+  <hr>
+  <% @post.tags.each do |tag| %>
+      <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"><%=  tag.name  %></a>
+  <% end %>
+
 </div>
 
 <% if @post.get_rating_total > 1  %>

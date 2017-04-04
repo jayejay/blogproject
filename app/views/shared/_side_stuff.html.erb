@@ -17,7 +17,8 @@
   <table>
     <% Tag.joins(:posts).group('tags.id').where(:posts => {:active => true}).order('COUNT(*) DESC').each do |t| %>
       <tr>
-        <td><%= link_to t.name + ' (' + t.posts.where(:posts => {:active => true}).count.to_s + ')', tag_path(t.id) %></td>
+        <td><%= link_to t.name + ' (' + t.posts.where(:posts => {:active => true}).count.to_s + ')', tag_path(t.id),\
+            class:'btn btn-success btn-xs btn-round' %></td>
       </tr>
     <% end %>
   </table>

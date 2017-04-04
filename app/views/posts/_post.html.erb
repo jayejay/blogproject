@@ -1,28 +1,39 @@
-<div class="row thumbnail">
-  <div class="col-md-6">
-  <% unless post.published_at.nil?  %>
-    <p><%= post.published_at.strftime('%d.%m.%Y') %>
-  <% else %>
-    <p><%= post.created_at.strftime('%d.%m.%Y') %>
-  <% end %>
+<div class="card card-plain card-blog">
+  <div class="row">
 
-  von <%= post.user.nick_name %></p>
+    <div class="col-md-4">
+      <div class="card-image">
+        <%= image_tag post.image_url, class: 'img img-raised'%>
+      </div>
+    </div>
 
-    <h3><%= post.title %></h3>
+    <div class="col-md-8">
+      <h6 class="category text-info"><%= post.category.name %></h6>
+      <h3 class="card-title">
+        <a href="<%= post_path(post.id) %>"><%= post.title %></a>
+      </h3>
+      <p class="card-description">
+        <%= truncate_html(post.content, length: 200, omission: '...' )%>
+        <%= link_to 'weiterlesen', post, class: 'btn btn-info btn-sm' %>
+      </p>
+      <p class="author">
+        von <a href="#pablo"><b><%= post.user.nick_name %></b></a>,
+        <% unless post.published_at.nil?  %>
+            <p><%= post.published_at.strftime('%d.%m.%Y') %>
+        <% else %>
+            <p><%= post.created_at.strftime('%d.%m.%Y') %>
+        <% end %>
+        </a>
+    </div>
 
-    <%#= post.short_preview_of_content(post.content, 50).html_safe + '...' %>
-    <%= truncate_html(post.content, length: 300, omission: '...')  %>
-    <%= link_to 'weiterlesen', post, class: 'btn btn-info' %> <br> <br>
 
     <% if user_signed_in? && current_user.admin? %>
         <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
         <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },\
-            class: 'btn btn-danger pull-right'%>
+            class: 'btn btn-danger'%>
     <% end %>
 
   </div>
-  <div class="col-md-6">
-    <%= image_tag post.image_url, class: 'post_preview_image' %>
-  </div>
+
 </div>
 <hr>

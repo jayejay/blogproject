@@ -5,8 +5,8 @@ body{
   background-image: url(asset_path("backgrounds/white.png"));
   background-attachment: fixed;
   background-size: cover;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.5em;
+  //font-family: 'Open Sans', sans-serif;
+  //font-size: 1.5em;
 }
 
 a{
@@ -14,73 +14,44 @@ a{
   font-size: 1.1em;
 }
 
-h3{
-  //-webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-  //-moz-box-shadow:  1px 1px 1px 1px rgba(0,0,0,0.5);
-  //box-shadow:  1px 1px 1px 1px rgba(0,0,0,0.5);
-  //border-radius: 3%;
-}
-
 
 //Navigation
 
-/*#nav {
-  background: rgb(179,220,237); !* Old browsers *!
-  background: -moz-linear-gradient(top,  rgba(179,220,237,1) 0%, rgba(143,143,143,1) 50%, rgba(188,224,238,1) 100%); !* FF3.6-15 *!
-  background: -webkit-linear-gradient(top,  rgba(179,220,237,1) 0%,rgba(143,143,143,1) 50%,rgba(188,224,238,1) 100%); !* Chrome10-25,Safari5.1-6 *!
-  background: linear-gradient(to bottom,  rgba(179,220,237,1) 0%,rgba(143,143,143,1) 50%,rgba(188,224,238,1) 100%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee',GradientType=0 ); !* IE6-9 *!
-
-}*/
-
 #nav li a{
-  //color: black;
+
   font-size: 1.5em;
-  //font-weight: bold;
+
 }
 
-/*#nav li a:hover{
-  color: whitesmoke;
-}*/
-
-/*.navbar{
-  margin-bottom: 0;
-}*/
-
-/*.navbar-default{
-  background: transparent;
-  border:none;
-  box-shadow: inset 0 0px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,0);
-}*/
-
 #application_container{
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,1);
   -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
   -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
   border-radius: 0.3%;
+  margin-top: -1%;
 }
 
 .logo{
-  width: 40%;
+  width: 20%;
   margin: 2% 35%;
 }
 
 .div_logo{
-  //-webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-  //-moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-  //box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-  //margin-bottom: 1%;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.anchor{
-  padding-top: 50px;
+  //background-color: rgba(0,0,0,0.5);
+  background-color: #00bcd4;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
 .logo-link{
   height: 50px;
   padding: 0;
+}
+
+.anchor{
+  padding-top: 50px;
 }
 
 .navbar-brand>img {
@@ -93,7 +64,8 @@ h3{
   background: rgba(255,255,255,0.9);
 }
 
-.new_post_image{
+.post_main_image{
+  margin-top:2%;
   width: 100%;
 }
 
