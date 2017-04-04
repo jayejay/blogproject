@@ -17,13 +17,14 @@
         <%= link_to 'weiterlesen', post, class: 'btn btn-info btn-sm' %>
       </p>
       <p class="author">
-        von <a href="#pablo"><b><%= post.user.nick_name %></b></a>,
+        von <a href="#"><b><%= post.user.nick_name %></b></a>,
         <% unless post.published_at.nil?  %>
-            <p><%= post.published_at.strftime('%d.%m.%Y') %>
+            <%= post.published_at.strftime('%d.%m.%Y') %>
         <% else %>
-            <p><%= post.created_at.strftime('%d.%m.%Y') %>
+            <%= post.created_at.strftime('%d.%m.%Y') %>
         <% end %>
         </a>
+      </p>
     </div>
 
 

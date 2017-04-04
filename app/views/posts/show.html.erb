@@ -1,5 +1,16 @@
 <div class="row">
   <%= image_tag @post.image_url.url, class: 'img img-raised post_main_image' %>
+  <p class="author">
+    <i class="material-icons">face</i><a href="#"><b><%= @post.user.nick_name %></b></a>
+    <i class="material-icons">access_time</i><% unless @post.published_at.nil?  %>
+        <%= @post.published_at.strftime('%d.%m.%Y') %>
+    <% else %>
+        <%= @post.created_at.strftime('%d.%m.%Y') %>
+    <% end %>
+
+  </p>
+  <hr>
+  <h6 class="category text-info"><%= @post.category.name %></h6>
   <%= content_tag(:h3,@post.title, class: 'title') %>
   <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
   <hr>
