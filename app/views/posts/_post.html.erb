@@ -32,9 +32,14 @@
       <% end  %>
       <% if user_signed_in? && current_user.admin? %>
           <hr>
-          <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
-          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },\
+          <%#= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
+          <a href="<%= edit_post_path(post) %>" class="btn btn-default">
+          <i class="material-icons">edit</i></a>
+          <%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },\
             class: 'btn btn-danger'%>
+          <a href="<%= edit_post_path(post) %>" class="btn btn-danger">
+            <i class="material-icons">delete</i></a>
+
       <% end %>
     </div>
 
