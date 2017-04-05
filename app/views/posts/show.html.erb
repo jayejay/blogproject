@@ -15,7 +15,8 @@
   <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
   <hr>
   <% @post.tags.each do |tag| %>
-      <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"><%=  tag.name  %></a>
+      <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
+         style="background-color:<%= tag.color %>"><%=  tag.name  %></a>
   <% end %>
 
 </div>

@@ -25,14 +25,21 @@
         <% end %>
         </a>
       </p>
+      <!--Post-Tags-->
+      <% post.tags.each do |tag| %>
+        <%= link_to tag.name, tag, class:'btn btn-round btn-xs',\
+            style: 'background-color:' + tag.color %>
+      <% end  %>
+      <% if user_signed_in? && current_user.admin? %>
+          <hr>
+          <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },\
+            class: 'btn btn-danger'%>
+      <% end %>
     </div>
 
 
-    <% if user_signed_in? && current_user.admin? %>
-        <%= link_to 'Edit', edit_post_path(post), class:'btn btn-default' %>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' },\
-            class: 'btn btn-danger'%>
-    <% end %>
+
 
   </div>
 
