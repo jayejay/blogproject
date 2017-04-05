@@ -17,16 +17,17 @@
         <%= link_to 'weiterlesen', post, class: 'btn btn-info btn-sm' %>
       </p>
       <p class="author">
-        von <a href="#"><b><%= post.user.nick_name %></b></a>,
+        <i class="material-icons">face</i><a href="#"> <%= post.user.nick_name %></a>
+        <i class="material-icons">access_time</i>
         <% unless post.published_at.nil?  %>
-            <%= post.published_at.strftime('%d.%m.%Y') %>
+            <%=  post.published_at.strftime('%d.%m.%Y') %>
         <% else %>
-            <%= post.created_at.strftime('%d.%m.%Y') %>
+            <%=  post.created_at.strftime('%d.%m.%Y') %>
         <% end %>
         </a>
       </p>
       <!--Post-Tags-->
-      <% post.tags.each do |tag| %>
+      <% post.tags.order(:name).each do |tag| %>
         <%= link_to tag.name, tag, class:'btn btn-round btn-xs',\
             style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
       <% end  %>

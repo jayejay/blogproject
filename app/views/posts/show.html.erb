@@ -1,7 +1,7 @@
 <div class="row">
   <%= image_tag @post.image_url.url, class: 'img img-raised post_main_image' %>
   <p class="author">
-    <i class="material-icons">face</i><a href="#"><b><%= @post.user.nick_name %></b></a>
+    <i class="material-icons">face</i><a href="#"> <%= @post.user.nick_name %></a>
     <i class="material-icons">access_time</i><% unless @post.published_at.nil?  %>
         <%= @post.published_at.strftime('%d.%m.%Y') %>
     <% else %>
@@ -14,7 +14,7 @@
   <%= content_tag(:h3,@post.title, class: 'title') %>
   <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
   <hr>
-  <% @post.tags.each do |tag| %>
+  <% @post.tags.order(:name).each do |tag| %>
       <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
          style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
   <% end %>
@@ -22,34 +22,16 @@
 </div>
 
 <% if @post.get_rating_total > 1  %>
-  <div id="rating" class="row thumbnail">
+  <div id="rating" class="row">
       <h3>Review</h3>
-      <table class="table table-striped rating-table">
-        <tr>
-          <td>Gameplay</td>
-          <td><%= image_tag 'rating/'+ @rating.gameplay.to_s + '.png', class: 'img-responsive rating-image' %></td>
-        </tr>
-        <tr>
-          <td>Graphics</td>
-          <td><%= image_tag 'rating/'+ @rating.graphics.to_s + '.png', class: 'img-responsive rating-image' %></td>
-        </tr>
-        <tr>
-          <td>Sound</td>
-          <td><%= image_tag 'rating/'+ @rating.sound.to_s + '.png', class: 'img-responsive rating-image' %></td>
-        </tr>
-        <tr>
-          <td>Innovation</td>
-          <td><%= image_tag 'rating/'+ @rating.innovation.to_s + '.png', class: 'img-responsive rating-image' %></td>
-        </tr>
-        <tr>
-          <td>Price-Performance</td>
-          <td><%= image_tag 'rating/'+ @rating.price_performance.to_s + '.png', class: 'img-responsive rating-image' %></td>
-        </tr>
-        <tr>
-          <td><strong>Total</strong></td>
-          <td><%= image_tag 'rating/'+ @post.get_rating_total.to_s + '.png', class: 'img-responsive total-rating-image' %></td>
-        </tr>
-      </table>
+      <!--<ul class="rating-table">-->
+        <div style="width:<%= 30 + @rating.gameplay*7 %>%;">Gameplay <b><%= @rating.gameplay.to_s %></b></div>
+        <div style="width:<%= 30 + @rating.graphics*7 %>%;">Graphics <b><%= @rating.graphics.to_s %></b></div>
+        <div style="width:<%= 30 + @rating.sound*7 %>%;">Sound <b><%= @rating.sound.to_s %></b></div>
+    <div style="width:<%= 30 +  @rating.innovation*7 %>%;">Innovation <b><%= @rating.innovation.to_s %></b></div>
+        <div style="width:<%= 30 + @rating.price_performance*7 %>%;">Price-Performance <b><%= @rating.price_performance.to_s %></b></div>
+        <div style="width:<%= 30 + @post.get_rating_total*7 %>%;"><strong>Total</strong> <b><%= @post.get_rating_total.to_s  %></b></div>
+      <!--</ul>-->
   </div>
 <% end %>
 

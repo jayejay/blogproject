@@ -21,17 +21,19 @@
   margin-bottom:5%;
 }
 
-.rating-image{
-  width: 50px;
+
+#rating div{
+  background-image: url(image_path('rating/rating_bar.png'));
+  background-size: cover;
+  text-align: right;
+  color: whitesmoke;
+  font-size: 1.7em;
+  //max-width: 527px;
+  margin-bottom:1%;
+  padding: 1%;
+  //min-height:50px;
 }
 
-.total-rating-image{
-  width: 70px;
-}
-
-.rating-table{
-  width: 50%;
-}
 
 .post_form_sidebar{
   background-color: rgba(255,255,255,1);
