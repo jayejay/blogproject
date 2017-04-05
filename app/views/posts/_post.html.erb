@@ -28,7 +28,7 @@
       <!--Post-Tags-->
       <% post.tags.each do |tag| %>
         <%= link_to tag.name, tag, class:'btn btn-round btn-xs',\
-            style: 'background-color:' + tag.color %>
+            style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
       <% end  %>
       <% if user_signed_in? && current_user.admin? %>
           <hr>

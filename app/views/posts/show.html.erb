@@ -16,7 +16,7 @@
   <hr>
   <% @post.tags.each do |tag| %>
       <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
-         style="background-color:<%= tag.color %>"><%=  tag.name  %></a>
+         style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
   <% end %>
 
 </div>

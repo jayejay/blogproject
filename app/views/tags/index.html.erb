@@ -12,8 +12,10 @@
   <tbody>
     <% @tags.each do |tag| %>
       <tr>
-        <td><%= link_to tag.name, tag, class:'btn btn-success btn-xs btn-round',\
-            style: 'background-color:'+ tag.color %></td>
+        <td>
+          <%= link_to tag.name, tag, class:'btn btn-default btn-xs btn-round',\
+            style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
+        </td>
         <% if user_signed_in? && current_user.admin?  %>
           <td><%= link_to 'Edit', edit_tag_path(tag), class: 'btn btn-default' %></td>
           <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
