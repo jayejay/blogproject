@@ -1,48 +1,11 @@
-<h3>Suche</h3>
 
-<%=	 form_tag('/posts', method:'get', class:'form-group', role:'search') do %>
-
-    <div class="form-group label-floating">
-      <%= label :q, 'Suchen nach', class: 'control-label' %>
-      <%=	text_field_tag(:q, nil, class:'form-control', ) %>
-      <%= submit_tag("suchen", class:'btn btn-default')%>
-    </div>
-<% end %>
+<%= render 'shared/search_bar' %>
 
 <%= image_tag image_path('trennstrich.png'), class: 'separator img-responsive' %>
 
-<div class="tags">
-  <h3>Tags</h3>
-
-  <table>
-    <% Tag.joins(:posts).group('tags.id').where(:posts => {:active => true}).order('COUNT(*) DESC').take(5).each do |t| %>
-      <tr>
-        <td><%= link_to t.name + ' (' + t.posts.where(:posts => {:active => true}).count.to_s + ')', tag_path(t.id),\
-            class:'btn btn-success btn-xs btn-round',\
-              style: 'background-color:' + t.color + '; color:' + t.text_color + ';' %>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-
-  <%= link_to '...mehr', tags_path %>
-
-</div>
+<%= render 'shared/tags' %>
 
 
 <%= image_tag image_path('trennstrich.png'), class: 'separator img-responsive' %>
 
-<div class="newest_post">
-
-  <h3>Neuester Beitrag</h3>
-
-  <% post = Post.where(active: true).last %>
-
-  <% unless post.nil?%>
-    <h4><%= post.title %></h4>
-    <%#= image_tag post.image_url, class:'new_post_image' %>
-    <%= truncate_html(post.content, length: 150, omission: '...')  %>
-    <%= link_to 'weiterlesen', post_path(post.id), class: 'btn btn-info' %>
-  <% end %>
-
-</div>
+<%= render 'posts/newest_post' %>

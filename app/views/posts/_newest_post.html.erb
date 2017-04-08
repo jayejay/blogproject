@@ -1,0 +1,15 @@
+<div class="newest_post">
+
+  <h3>Neuer Beitrag</h3>
+
+  <% post = Post.where(active: true).last %>
+
+  <% unless post.nil?%>
+      <h6 class="category text-info"><%= post.category.name %></h6>
+      <h4><%= post.title %></h4>
+      <%#= image_tag post.image_url, class:'new_post_image' %>
+      <%= truncate_html(post.content, length: 150, omission: '...')  %>
+      <%= link_to 'weiterlesen', post_path(post.id), class: 'btn btn-info' %>
+  <% end %>
+
+</div>

@@ -13,10 +13,9 @@ class PostsController < ApplicationController
       @posts = Post.where(active: true).order(created_at: :desc)\
         .paginate(page: params[:page], per_page: 4)
     end
-    # respond_to do |format|
-    #   format.html
-    #   format.js
-    # end
+
+    @tags = Tag.all
+
   end
 
   # GET /posts/1
