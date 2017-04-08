@@ -1,5 +1,5 @@
 <div class="tags">
-  <h3>Häufigste Tags</h3>
+  <h3>Häufige Tags</h3>
 
   <table>
     <% Tag.joins(:posts).group('tags.id').where(:posts => {:active => true}).order('COUNT(*) DESC').take(5).each do |t| %>
