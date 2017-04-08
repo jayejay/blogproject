@@ -4,9 +4,10 @@
   <table>
     <% Tag.joins(:posts).group('tags.id').where(:posts => {:active => true}).order('COUNT(*) DESC').take(5).each do |t| %>
         <tr>
-          <td><%= link_to t.name + ' (' + t.posts.where(:posts => {:active => true}).count.to_s + ')', tag_path(t.id),\
+          <td><%= link_to raw(t.name + ' <span class="badge">' + t.posts.where(:posts => {:active => true}).count.to_s\
+            + '</span>'), tag_path(t.id),\
             class:'btn btn-success btn-xs btn-round',\
-              style: 'background-color:' + t.color + '; color:' + t.text_color + ';' %>
+            style: 'background-color:' + t.color + '; color:' + t.text_color + ';' %>
           </td>
         </tr>
     <% end %>
@@ -15,3 +16,4 @@
   <%= link_to '...mehr', tags_path %>
 
 </div>
+
