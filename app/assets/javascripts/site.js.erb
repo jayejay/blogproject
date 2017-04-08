@@ -1,15 +1,5 @@
 $(document).on('turbolinks:load', function () {
 
-    // tinymce.init({
-    //     selector: '.textarea',
-    //     plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker uploadimage',
-    //     height: "500px",
-    //     toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify' +
-    //     ' | bullist numlist outdent indent | link image',
-    //     toolbar2: "forecolor | backcolor | uploadimage",
-    //     paste_data_images: true
-    // });
-
     $(function() {
         $('.textarea').tinymce({
             plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker table',
@@ -21,7 +11,10 @@ $(document).on('turbolinks:load', function () {
             toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify' +
             ' | bullist numlist outdent indent | link',
             toolbar2: "forecolor | backcolor | uploadimage | table",
-            paste_data_images: true
+            paste_data_images: true,
+            image_class_list: [
+                {title: 'Responsive', value: 'img-responsive'}
+            ]
         });
     });
 
