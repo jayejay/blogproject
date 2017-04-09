@@ -118,7 +118,11 @@
   <h3>Veröffentlichen</h3>
   <div class="field">
     <%= f.label :published_at, 'Veröffentlichungsdatum'%>
-    <%= f.date_field :published_at, :value => post.published_at.strftime('%d.%m.%Y') %>
+    <% if post.persisted? %>
+      <%= f.date_field :published_at, :value => post.published_at.strftime('%d.%m.%Y') %>
+    <% else %>
+        <%= f.date_field :published_at, :value => Time.now.strftime('%d.%m.%Y') %>
+    <% end %>
   </div>
 
   <div class="field">
