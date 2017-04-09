@@ -2,15 +2,17 @@ $(document).on('turbolinks:load', function () {
 
     $(function() {
         $('.textarea').tinymce({
-            plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker table media',
+            plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker' +
+            ' table media code',
             external_plugins: {
                 "uploadimage": "<%= javascript_path('tinymce/js/tinymce/plugins/uploadimage/plugin.min.js') %>"
             },
 
             height: "500px",
-            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify' +
-            ' | bullist numlist outdent indent | link',
-            toolbar2: "forecolor | backcolor | uploadimage | table | media",
+            toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright ' +
+            'alignjustify  | bullist numlist outdent indent | link',
+
+            toolbar2: "forecolor | backcolor | uploadimage | table | media | code",
             paste_data_images: true,
             image_class_list: [
                 {title: 'Responsive', value: 'img-responsive'}
