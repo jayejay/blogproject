@@ -118,7 +118,7 @@
   <h3>Veröffentlichen</h3>
   <div class="field">
     <%= f.label :published_at, 'Veröffentlichungsdatum'%>
-    <%= f.date_field :published_at, :value => Time.now.strftime('%d.%m.%Y') %>
+    <%= f.date_field :published_at, :value => post.published_at.strftime('%d.%m.%Y') %>
   </div>
 
   <div class="field">
