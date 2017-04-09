@@ -119,9 +119,9 @@
   <div class="field">
     <%= f.label :published_at, 'Veröffentlichungsdatum'%>
     <% if post.persisted? %>
-      <%= f.date_field :published_at, :value => post.published_at.strftime('%d.%m.%Y') %>
+      <%= f.date_field :published_at, :value => post.published_at.strftime('%Y-%m-%d') %>
     <% else %>
-        <%= f.date_field :published_at, :value => Time.now.strftime('%d.%m.%Y') %>
+        <%= f.date_field :published_at, :value => Time.now.strftime('%Y-%m-%d') %>
     <% end %>
   </div>
 
