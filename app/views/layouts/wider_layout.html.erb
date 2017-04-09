@@ -31,12 +31,11 @@
 
     <%= render partial: "shared/navigation" %>
 
-
     <%= render "shared/logo_with_background"  %>
 
     <div id="application_container" class="container">
 
-      <div class="col-md-8 content">
+      <div class="col-md-12 content">
         <div class="content_wrapper">
           <%= yield %>
         </div>
@@ -44,9 +43,6 @@
         <% if alert %>
             <p id="alert" class="alert alert-info"><%= alert %></p>
         <% end %>
-      </div>
-      <div class="col-md-4 side_stuff">
-        <%= render 'shared/side_stuff' %>
       </div>
 
     </div><!-- end container-->

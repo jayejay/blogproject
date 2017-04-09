@@ -1,0 +1,69 @@
+<h3 id="header_new_posts">Neue Beiträge</h3>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card card-blog">
+      <%= link_to(@gaming_post.first) do %>
+        <div class="card-image landing_page_images"
+             style="background-image: url('<%= @gaming_post.first.image_url %>')">
+        </div>
+      <% end %>
+
+      <div class="content">
+        <h6 class="category text-info"><%= @gaming_post.first.category.name %></h6>
+        <h4 class="card-title">
+          <a href="#pablo"><%= @gaming_post.first.title %></a>
+        </h4>
+        <p class="card-description">
+          <%= truncate_html(@gaming_post.first.content, length: 200, omission: '...' )%>
+        </p>
+      </div><!--end content-->
+    </div><!--end card-blog-->
+  </div>
+
+  <div class="col-md-4">
+    <div class="card card-blog">
+      <%= link_to(@sports_post.first) do %>
+        <div class="card-image landing_page_images"
+             style="background-image: url('<%= @sports_post.first.image_url %>')">
+        </div>
+      <% end %>
+
+      <div class="content">
+        <h6 class="category text-info"><%= @sports_post.first.category.name %></h6>
+        <h4 class="card-title">
+          <a href="#pablo"><%= @sports_post.first.title %></a>
+        </h4>
+        <p class="card-description">
+          <%= truncate_html(@sports_post.first.content, length: 200, omission: '...' )%>
+        </p>
+      </div><!--end content-->
+    </div><!--end card-blog-->
+  </div>
+
+  <div class="col-md-4">
+    <div class="card card-blog">
+      <%= link_to(@Nutrition_post.first) do %>
+        <div class="card-image landing_page_images"
+             style="background-image: url('<%= @Nutrition_post.first.image_url %>')">
+        </div>
+      <% end %>
+
+      <div class="content">
+        <h6 class="category text-info"><%= @Nutrition_post.first.category.name %></h6>
+        <h4 class="card-title">
+          <a href="#pablo"><%= @Nutrition_post.first.title %></a>
+        </h4>
+        <p class="card-description">
+          <%= truncate_html(@Nutrition_post.first.content, length: 200, omission: '...' )%>
+        </p>
+      </div><!--end content-->
+    </div><!--end card-blog-->
+  </div>
+</div><!--end row-->
+
+<div class="row">
+  <div class="col-md-12">
+
+  </div>
+
+</div><!--end row-->

@@ -3,6 +3,16 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, :except => [:show, :index]
   load_and_authorize_resource
 
+  def landing_page
+    @gaming_post = Post.joins(:category).where('categories.name = ?', 'Gaming').\
+      order(published_at: :desc).limit(1)
+    @sports_post = Post.joins(:category).where('categories.name = ?', 'Sports').\
+      order(published_at: :desc).limit(1)
+    @Nutrition_post = Post.joins(:category).where('categories.name = ?', 'Nutrition').\
+      order(published_at: :desc).limit(1)
+    render :layout => 'wider_layout'
+  end
+
   # GET /posts
   # GET /posts.json
   def index
@@ -31,7 +41,6 @@ class PostsController < ApplicationController
     @rating = @post.build_rating
     @tags = Tag.all
     render :layout => 'user_interface'
-    #todo: control if db is filled with zeros
   end
 
   # GET /posts/1/edit
