@@ -1,0 +1,58 @@
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Anleitung</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Anleitung</h4>
+      </div>
+      <div class="modal-body">
+
+        <div>
+          <h4>Code für Youtube Videos:</h4>
+          <p>
+            <code>
+              &#60;div class="embed-responsive embed-responsive-16by9"&#62;<b>...</b>&#60;/div&#62;
+            </code>
+          </p>
+        </div>
+
+        <div>
+          <h4>Code für Image-Gallery</h4>
+          <p>
+            <code>
+
+              &#60;a href="<b>https://...</b>" data-toggle="lightbox" data-gallery="hidden-images"
+                class="col-sm-4"&#62;<br>
+              &#60;img src="<b>https://...</b>" class="img-fluid"&#62;
+              <br>&#60;/a&#62;<br>
+
+              &#60;div data-toggle="lightbox" data-gallery="hidden-images" data-remote="<b>https://...</b>"
+              data-title="<b>Title 1</b>"&#62;&#60;/div&#62;<br>
+              &#60;div data-toggle="lightbox" data-gallery="hidden-images" data-remote="<b>https//...</b>"
+              data-title="<b>Title 2</b>"&#62;&#60;/div&#62;<br>
+              &#60;div data-toggle="lightbox" data-gallery="hidden-images" data-remote="<b>https://...</b>"
+              data-title="<b>Title 3</b>"&#62;&#60;/div&#62;<br>
+              &#60;div data-toggle="lightbox" data-gallery="hidden-images" data-remote="<b>https://...</b>"
+              data-title="<b>Title 4</b>"&#62;&#60;/div&#62;<br>
+              &#60;div data-toggle="lightbox" data-gallery="hidden-images" data-remote="<b>https://...</b>"
+              data-title="<b>Title 5</b>"&#62;&#60;/div&#62;<br>
+
+            </code>
+          </p>
+
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
