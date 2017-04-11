@@ -1,58 +1,60 @@
-<div class="row">
-  <%= image_tag @post.image_url.url, class: 'img img-raised post_main_image' %>
-  <p class="author">
-    <i class="material-icons">face</i><a href="#" style="color: <%= @post.user.text_color %>">
-      <%= @post.user.nick_name %></a>
-    <i class="material-icons">access_time</i><% unless @post.published_at.nil?  %>
-        <%= @post.published_at.strftime('%d.%m.%Y') %>
-    <% else %>
-        <%= @post.created_at.strftime('%d.%m.%Y') %>
+<div class="post_content_wrapper">
+  <div class="">
+    <%= image_tag @post.image_url.url, class: 'img img-raised post_main_image' %>
+    <p class="author">
+      <i class="material-icons">face</i><a href="#" style="color: <%= @post.user.text_color %>">
+        <%= @post.user.nick_name %></a>
+      <i class="material-icons">access_time</i><% unless @post.published_at.nil?  %>
+          <%= @post.published_at.strftime('%d.%m.%Y') %>
+      <% else %>
+          <%= @post.created_at.strftime('%d.%m.%Y') %>
+      <% end %>
+
+    </p>
+    <hr>
+    <h6 class="category text-info"><%= @post.category.name %></h6>
+    <%= content_tag(:h3,@post.title, class: 'title') %>
+    <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
+    <hr>
+    <% @post.tags.order(:name).each do |tag| %>
+        <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
+           style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
     <% end %>
 
-  </p>
-  <hr>
-  <h6 class="category text-info"><%= @post.category.name %></h6>
-  <%= content_tag(:h3,@post.title, class: 'title') %>
-  <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
-  <hr>
-  <% @post.tags.order(:name).each do |tag| %>
-      <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
-         style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
-  <% end %>
-
-</div>
-
-<% if @post.get_rating_total > 1  %>
-  <div id="rating" class="row">
-      <h3>Review</h3>
-      <!--<ul class="rating-table">-->
-        <div style="width:<%= 30 + @rating.gameplay*7 %>%;">Gameplay <b><%= @rating.gameplay.to_s %></b></div>
-        <div style="width:<%= 30 + @rating.graphics*7 %>%;">Graphics <b><%= @rating.graphics.to_s %></b></div>
-        <div style="width:<%= 30 + @rating.sound*7 %>%;">Sound <b><%= @rating.sound.to_s %></b></div>
-    <div style="width:<%= 30 +  @rating.innovation*7 %>%;">Innovation <b><%= @rating.innovation.to_s %></b></div>
-        <div style="width:<%= 30 + @rating.price_performance*7 %>%;">Price-Performance <b><%= @rating.price_performance.to_s %></b></div>
-        <div style="width:<%= 30 + @post.get_rating_total*7 %>%;"><strong>Total</strong> <b><%= @post.get_rating_total.to_s  %></b></div>
-      <!--</ul>-->
   </div>
-<% end %>
 
-<div class="row">
-  <% if signed_in? && current_user.admin? %>
-    <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-warning' %> |
+  <% if @post.get_rating_total > 1  %>
+    <div id="rating" class="">
+        <h3>Review</h3>
+        <!--<ul class="rating-table">-->
+          <div style="width:<%= 30 + @rating.gameplay*7 %>%;">Gameplay <b><%= @rating.gameplay.to_s %></b></div>
+          <div style="width:<%= 30 + @rating.graphics*7 %>%;">Graphics <b><%= @rating.graphics.to_s %></b></div>
+          <div style="width:<%= 30 + @rating.sound*7 %>%;">Sound <b><%= @rating.sound.to_s %></b></div>
+          <div style="width:<%= 30 +  @rating.innovation*7 %>%;">Innovation <b><%= @rating.innovation.to_s %></b></div>
+          <div style="width:<%= 30 + @rating.price_performance*7 %>%;">Price-Performance <b><%= @rating.price_performance.to_s %></b></div>
+          <div style="width:<%= 30 + @post.get_rating_total*7 %>%;" class="rating_total"><strong>Total</strong> <b><%= @post.get_rating_total.to_s  %></b></div>
+        <!--</ul>-->
+    </div>
   <% end %>
-  <%= link_to 'Back', :back, class: 'btn btn-default' %>
-</div>
 
-<!--<div id="new_comment" class="row anchor">-->
-  <!--<p><%#= render "comments/new_comment" %></p>-->
+  <div class="">
+    <% if signed_in? && current_user.admin? %>
+      <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-warning' %> |
+    <% end %>
+    <%= link_to 'Back', :back, class: 'btn btn-default' %>
+  </div>
 
-<!--</div>-->
+  <!--<div id="new_comment" class="row anchor">-->
+    <!--<p><%#= render "comments/new_comment" %></p>-->
 
-<% if notice %>
-  <p id="notice" class="alert alert-info"><%= notice %></p>
-<% end %>
+  <!--</div>-->
 
-<div id="comments_wrapper" class="row">
-  <%#= render "comments" %>
-  <%= render 'shared/disqus' %>
+  <% if notice %>
+    <p id="notice" class="alert alert-info"><%= notice %></p>
+  <% end %>
+
+  <div id="comments_wrapper" class="">
+    <%#= render "comments" %>
+    <%= render 'shared/disqus' %>
+  </div>
 </div>

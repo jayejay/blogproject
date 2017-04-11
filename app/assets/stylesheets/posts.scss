@@ -27,11 +27,17 @@
   background-size: cover;
   text-align: right;
   color: whitesmoke;
-  font-size: 1.7em;
   //max-width: 527px;
   margin-bottom:1%;
   padding: 1%;
   //min-height:50px;
+  font-size: 1.1em;
+}
+
+#rating .rating_total{
+  background-image: url(image_path('rating/review_bar_total.png'));
+  color:  #006064;
+  font-size: 1.3em;
 }
 
 
@@ -70,6 +76,33 @@
   margin: 0 1%;
 }
 
-.blog-image-index{
-  margin: 10% 0% 0 3%;
+.post-image-index{
+  margin: 10% 3%;
+  background-color: white;
+}
+
+.posts_index{
+  //background-color: #b0bec5;
+  background-color: #b2ebf2;
+  padding: 3%;
+}
+
+@media only screen and (min-width: 768px){
+  .post_content_wrapper{
+    -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+    -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+    padding: 3%;
+    margin-top: 2%;
+    border-radius: 0.1%;
+  }
+
+  #rating div{
+    font-size: 1.5em;
+  }
+
+  #rating .rating_total{
+    font-size: 1.7em;
+  }
+
 }
