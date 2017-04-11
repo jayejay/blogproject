@@ -10,15 +10,12 @@
       </ul>
     </div>
   <% end %>
-<div class="col-md-8">
+<div class="col-md-8 post_form">
 
-  <h3>Title</h3>
-  <div class="field">
-    <%= f.label :title %>
+  <div class="form-group label-floating">
+    <%= f.label :title, class: 'control-label' %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
-
-  <h3>Content</h3>
 
   <div class="field">
     <%= f.label :content %>
@@ -29,26 +26,29 @@
   </div>
 
 </div>
-<div class="col-md-4 post_form_sidebar">
+<div class="col-md-4 post_form">
 
-  <h3>Autor</h3>
+  <h3 class="title">Autor</h3>
 
   <div class="field">
 
     <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :nick_name, {:selected => current_user.id}  %>
+    <% if post.persisted? %>
+      <%= f.collection_select :user_id, User.all, :id, :nick_name, {:selected => post.user_id}  %>
+    <% else %>
+      <%= f.collection_select :user_id, User.all, :id, :nick_name, {:selected => current_user.id}  %>
+    <% end %>
 
   </div>
 
-
-  <h3>Main Post Pic</h3>
+  <h3 class="title">Main Post Pic</h3>
 
   <div class="field">
     <%= f.label :image_url %><br>
     <%= f.file_field :image_url %>
   </div>
 
-  <h3>Category</h3>
+  <h3 class="title">Category</h3>
 
   <div class="field">
 
@@ -57,7 +57,7 @@
 
   </div>
 
-  <h3>Tags</h3>
+  <h3 class="title">Tags</h3>
 
   <div class="field">
 
@@ -65,7 +65,7 @@
 
   </div>
 
-    <h3>Rating</h3>
+    <h3 class="title">Rating</h3>
       <table class="table table-striped">
         <%= f.fields_for :rating do |rating_form| %>
             <tr>
@@ -112,7 +112,7 @@
         <% end %>
       </table>
 
-  <h3>Veröffentlichen</h3>
+  <h3 class="title">Veröffentlichen</h3>
   <div class="field">
     <%= f.label :published_at, 'Veröffentlichungsdatum'%>
     <% if post.persisted? %>
