@@ -28,7 +28,7 @@
         </a>
       </p>
       <!--Post-Tags-->
-      <% post.tags.order(:name).each do |tag| %>
+      <% post.tags.first(4).each do |tag| %>
         <%= link_to tag.name, tag, class:'btn btn-round btn-xs',\
             style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
       <% end  %>
