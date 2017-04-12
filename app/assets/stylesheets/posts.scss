@@ -2,16 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-figure{
-
-}
-
-figcaption{
-  font-size: 0.7em;
-  margin-left: 1%;
-  background-color: #b2ebf2;
-}
-
 .post_main_image{
   width: 100%;
   margin: 3% auto;
@@ -112,6 +102,7 @@ figcaption{
     padding: 3%;
     margin-top: 2%;
     border-radius: 0.1%;
+    margin-bottom: 2%;
   }
 
   #rating div{
