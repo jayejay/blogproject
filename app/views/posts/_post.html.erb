@@ -6,11 +6,12 @@
         <div class="post-image-index">
           <%= image_tag post.image_url, class: 'img img-raised'%>
         </div>
+      </a>
+        <!--Post-Tags-->
         <% post.tags.first(3).each do |tag| %>
             <%= link_to tag.name, tag, class:'btn btn-round btn-xs',\
             style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
         <% end  %>
-      </a>
     </div>
 
     <div class="col-md-7">
@@ -33,20 +34,13 @@
         <% end %>
         </a>
       </p>
-      <!--Post-Tags-->
-
       <% if user_signed_in? && current_user.admin? %>
           <hr>
           <%= link_to raw('<i class="material-icons">edit</i>'), edit_post_path(post), class:'btn btn-default' %>
           <%= link_to raw('<i class="material-icons">delete</i>'), post, method: :delete, data: { confirm: 'Are you sure?' },\
             class: 'btn btn-danger'%>
-
-
       <% end %>
     </div>
-
-
-
 
   </div>
 
