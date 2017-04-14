@@ -6,6 +6,10 @@
         <div class="post-image-index">
           <%= image_tag post.image_url, class: 'img img-raised'%>
         </div>
+        <% post.tags.first(3).each do |tag| %>
+            <%= link_to tag.name, tag, class:'btn btn-round btn-xs',\
+            style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
+        <% end  %>
       </a>
     </div>
 
@@ -30,10 +34,7 @@
         </a>
       </p>
       <!--Post-Tags-->
-      <% post.tags.first(4).each do |tag| %>
-        <%= link_to tag.name, tag, class:'btn btn-round btn-xs',\
-            style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
-      <% end  %>
+
       <% if user_signed_in? && current_user.admin? %>
           <hr>
           <%= link_to raw('<i class="material-icons">edit</i>'), edit_post_path(post), class:'btn btn-default' %>
