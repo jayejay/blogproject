@@ -89,9 +89,11 @@
 }
 
 .posts_index{
-  //background-color: #b0bec5;
   background-color: #b2ebf2;
   padding: 3%;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
 @media only screen and (min-width: 768px){

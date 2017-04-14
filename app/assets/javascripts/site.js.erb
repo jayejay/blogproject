@@ -18,13 +18,23 @@ $(document).on('turbolinks:load', function () {
                 {title: 'Responsive', value: 'img-responsive'}
             ],
             imagetools_cors_hosts: ['sporting-nerds.com'],
-            relative_urls: false
+            relative_urls: false,
+            valid_elements : '*[*]'
         });
     });
 
+    //Info and alerts fading out
     $('.alert').delay(2000).fadeOut(1500);
 
+    // div dame height
     $('.card').matchHeight();
+
+    //Bootstrap Carousel
+    $(document).ready(function() {
+        $('.carousel').carousel({
+            interval: 1200
+        })
+    });
 
 })
 
