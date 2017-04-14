@@ -1,13 +1,15 @@
 <div class="card card-plain card-blog posts_index">
   <div class="row">
 
-    <div class="col-md-4">
-      <div class="post-image-index">
-        <%= image_tag post.image_url, class: 'img img-raised'%>
-      </div>
+    <div class="col-md-5">
+      <a href="<%= post_path(post.id) %>">
+        <div class="post-image-index">
+          <%= image_tag post.image_url, class: 'img img-raised'%>
+        </div>
+      </a>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-md-7">
       <h6 class="category text-info"><%= post.category.name %></h6>
       <h3 class="card-title">
         <a href="<%= post_path(post.id) %>"><%= post.title %></a>
