@@ -1,12 +1,12 @@
 <div class="newest_post">
-
-  <h3 class="title">Aktueller Beitrag</h3>
-
   <% post = Post.where(active: true).last %>
+  <h3 class="title">Aktueller Beitrag</h3>
 
   <% unless post.nil?%>
       <h6 class="category text-info"><%= post.category.name %></h6>
-      <h4 class="title"><%= post.title %></h4>
+      <a href="<%= post_path(post) %>">
+        <h4 class="title"><%= post.title %></h4>
+      </a>
       <%#= image_tag post.image_url, class:'new_post_image' %>
       <%= truncate_html(post.content, length: 150, omission: '...')  %>
       <%= link_to 'weiterlesen', post_path(post.id), class: 'btn btn-info' %>
