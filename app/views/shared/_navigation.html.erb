@@ -36,12 +36,14 @@
                   <li><%= link_to 'Neuer Benutzer', new_user_path %></li>
                 </ul>
             </li>
-          <%if user_signed_in? %>
-            <li><%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %></li>
-          <% else %>
-            <li><%= link_to('LOGIN', new_user_session_path) %></li>
-          <% end  %>
         <% end %>
+
+        <%if user_signed_in? %>
+            <li><%= link_to('LOGOUT', destroy_user_session_path, :method => :delete) %></li>
+        <%# else %>
+            <!--<li><%#= link_to('LOGIN', new_user_session_path) %></li>-->
+        <% end  %>
+
       </ul>
 
       <ul class="nav navbar-nav navbar-right nav_social_media">
