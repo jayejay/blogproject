@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Tags</h1>
-
+<% if user_signed_in? && current_user.admin?  %>
 <table class="table table_tags">
   <thead>
     <tr>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tags.each do |tag| %>
       <tr>
@@ -16,15 +15,20 @@
           <%= link_to tag.name, tag, class:'btn btn-default btn-xs btn-round',\
             style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
         </td>
-        <% if user_signed_in? && current_user.admin?  %>
+
           <td><%= link_to raw('<i class="material-icons">edit</i>'), edit_tag_path(tag), class: 'btn btn-default' %>
           <%= link_to raw('<i class="material-icons">close</i>'), tag, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
         <%end %>
       </tr>
-    <% end %>
+
   </tbody>
 </table>
+<% else %>
+    <% @tags.each do |tag| %>
+      <%= link_to tag.name, tag, class:'btn btn-default btn-xs btn-round',\
+          style: 'background-color:'+ tag.color + ';color: ' + tag.text_color + ';'  %>
+    <% end %>
+<% end %>
 
-<br>
 
 
