@@ -16,9 +16,10 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left">
 
-          <li><%= link_to('gaming',  posts_gaming_path) %></li>
-          <li><%= link_to('sports', posts_sports_path) %></li>
-          <li><%= link_to('nutrition', posts_nutrition_path) %></li>
+        <li><%= link_to('gaming',  posts_gaming_path) %></li>
+        <li><%= link_to('sports', posts_sports_path) %></li>
+        <li><%= link_to('nutrition', posts_nutrition_path) %></li>
+        <li><%= link_to('About us', users_path) %></li>
 
 
         <% if user_signed_in? && current_user.admin? %>
