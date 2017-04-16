@@ -18,6 +18,8 @@ class Ability
       user ||= User.new # guest user (not logged in)
       if user.admin?
         can :manage, :all
+      elsif user.moderator?
+        can :manage, :all
       else
         #todo: posts not readable
         #can :read, Post

@@ -44,6 +44,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :image_url %>
+    <%= f.text_field :image_url, class: 'form-control' %>
+  </div>
+
+  <div class="field">
     <%= f.label :function %>
     <%= f.text_field :function, class: 'form-control' %>
   </div>
@@ -64,7 +69,6 @@
     <%= f.label :admin %>
     <%= f.check_box :admin %>
   </div>
-
 
   <div class="actions">
     <%= f.submit class:'btn btn-success' %>
