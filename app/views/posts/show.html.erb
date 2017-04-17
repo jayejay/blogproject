@@ -1,10 +1,10 @@
 <% content_for :head do %>
-    <meta property="og:url"                content="<%= post_url(@post) %>" />
-    <meta property="fb:app_id"             content="326019507801319" />
-    <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="<%= @post.title %>" />
-    <meta property="og:description"        content="<%= truncate_html(@post.content, length: 200, omission: '...' ) %>" />
-    <meta property="og:image"              content="<%= @post.image_url %>" />
+    <meta property="og:url" content="<%= post_url(@post) %>" />
+    <meta property="fb:app_id" content="326019507801319" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="<%= @post.title %>" />
+    <meta property="og:description" content="<%= truncate_html(@post.content, length: 200, omission: '...' ) %>" />
+    <meta property="og:image" content="<%= @post.image_url %>" />
 <% end %>
 
   <div class="">
@@ -23,11 +23,6 @@
     <h6 class="category text-info"><%= @post.category.name %></h6>
     <%= content_tag(:h3,@post.title, class: 'title') %>
     <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
-    <hr>
-    <% @post.tags.order(:name).each do |tag| %>
-        <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
-           style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
-    <% end %>
 
     <div class="fb-like"
          data-href="<%= post_url(@post) %>"
@@ -35,6 +30,12 @@
          data-action="like"
          data-show-faces="true">
     </div>
+    <hr>
+    <% @post.tags.order(:name).each do |tag| %>
+        <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
+           style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
+    <% end %>
+
   </div>
 
   <% if @post.get_rating_total > 1  %>
