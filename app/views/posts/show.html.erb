@@ -3,7 +3,7 @@
     <meta property="fb:app_id" content="326019507801319" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<%= @post.title %>" />
-    <meta property="og:description" content="<%= truncate_html(@post.content, length: 200, omission: '...' ) %>" />
+    <meta property="og:description" content="<%= strip_tags(truncate_html(@post.content, length: 200, omission: '...' )) %>" />
     <meta property="og:image" content="<%= @post.image_url %>" />
 <% end %>
 
@@ -28,7 +28,8 @@
          data-href="<%= post_url(@post) %>"
          data-layout="button_count" data-action="like"
          data-size="large"
-         data-show-faces="false" data-share="true"></div>
+         data-show-faces="false" data-share="true">
+    </div>
     <hr>
     <% @post.tags.order(:name).each do |tag| %>
         <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
@@ -58,17 +59,10 @@
     <%= link_to 'Back', :back, class: 'btn btn-default' %>
   </div>
 
-  <!--<div id="new_comment" class="row anchor">-->
-    <!--<p><%#= render "comments/new_comment" %></p>-->
-
-  <!--</div>-->
-
   <% if notice %>
     <p id="notice" class="alert alert-info"><%= notice %></p>
   <% end %>
 
   <div id="comments_wrapper" class="">
-    <%#= render "comments" %>
     <%= render 'shared/disqus' %>
   </div>
-</div>
