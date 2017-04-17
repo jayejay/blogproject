@@ -25,11 +25,10 @@
     <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
     <br>
     <div class="fb-like"
-         data-href="<%= post_url(@post) %>"
-         data-layout="standard"
-         data-action="like"
-         data-show-faces="true">
-    </div>
+         data-href="https://developers.facebook.com/docs/plugins/"
+         data-layout="button_count" data-action="like"
+         data-size="large"
+         data-show-faces="false" data-share="true"></div>
     <hr>
     <% @post.tags.order(:name).each do |tag| %>
         <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
