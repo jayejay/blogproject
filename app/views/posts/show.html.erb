@@ -29,6 +29,12 @@
            style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
     <% end %>
 
+    <div class="fb-like"
+         data-href="<%= post_url(@post) %>"
+         data-layout="standard"
+         data-action="like"
+         data-show-faces="true">
+    </div>
   </div>
 
   <% if @post.get_rating_total > 1  %>
