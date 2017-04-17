@@ -1,5 +1,6 @@
 <% content_for :head do %>
     <meta property="og:url"                content="<%= post_url(@post) %>" />
+    <meta property="fb:app_id"             content="326019507801319" />
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="<%= @post.title %>" />
     <meta property="og:description"        content="<%= truncate_html(@post.content, length: 200, omission: '...' ) %>" />
