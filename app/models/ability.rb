@@ -22,8 +22,8 @@ class Ability
         can :manage, :all
       else
         #todo: posts not readable
-        can :read, Post
-        can :read, Tag
+        #can :read, Post
+        #can :read, Tag
       end
     end
 
