@@ -46,6 +46,9 @@ footer{
   display: none;
 }
 
+.twitter{
+  margin-top: 0;
+}
 
 @media only screen and (max-width: 991px) {
   .nav_social_media {
@@ -54,6 +57,10 @@ footer{
 
   .search_bar_separator{
     display: block;  
+  }
+
+  .twitter{
+    margin-top: 1%;
   }
 
 }
@@ -129,6 +136,7 @@ footer{
 .separator{
   margin: 3% auto;
 }
+
 
 
 
