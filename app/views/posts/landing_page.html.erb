@@ -13,7 +13,7 @@
         <%= render 'posts/post_author', :post => @gaming_post.first %>
         <h6 class="category text-info"><%= @gaming_post.first.category.name %></h6>
         <h4 class="card-title">
-          <a href="#pablo"><%= @gaming_post.first.title %></a>
+          <a href="<%= post_path(@gaming_post.first) %>"><%= @gaming_post.first.title %></a>
         </h4>
         <p class="card-description">
           <%= truncate_html(@gaming_post.first.content, length: 200, omission: '...' )%>
@@ -34,7 +34,7 @@
         <%= render 'posts/post_author', :post => @sports_post.first %>
         <h6 class="category text-info"><%= @sports_post.first.category.name %></h6>
         <h4 class="card-title">
-          <a href="#pablo"><%= @sports_post.first.title %></a>
+          <a href="<%= post_path(@sports_post.first) %>"><%= @sports_post.first.title %></a>
         </h4>
         <p class="card-description">
           <%= truncate_html(@sports_post.first.content, length: 200, omission: '...' )%>
@@ -55,7 +55,7 @@
         <%= render 'posts/post_author', :post => @Nutrition_post.first %>
         <h6 class="category text-info"><%= @Nutrition_post.first.category.name %></h6>
         <h4 class="card-title">
-          <a href="#pablo"><%= @Nutrition_post.first.title %></a>
+          <a href="<%= post_path(@Nutrition_post.first) %>"><%= @Nutrition_post.first.title %></a>
         </h4>
         <p class="card-description">
           <%= truncate_html(@Nutrition_post.first.content, length: 200, omission: '...' )%>
