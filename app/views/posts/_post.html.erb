@@ -23,17 +23,7 @@
         <%= truncate_html(post.content, length: 200, omission: '...' )%>
         <%= link_to 'weiterlesen', post, class: 'btn btn-info btn-sm' %>
       </p>
-      <p class="author">
-        <i class="material-icons">face</i>
-        <a href="<%= user_path(post.user) %>" style="color: <%= post.user.text_color %>"> <%= post.user.nick_name %></a>
-        <i class="material-icons">access_time</i>
-        <% unless post.published_at.nil?  %>
-            <%=  post.published_at.strftime('%d.%m.%Y') %>
-        <% else %>
-            <%=  post.created_at.strftime('%d.%m.%Y') %>
-        <% end %>
-        </a>
-      </p>
+      <%= render 'posts/post_author', :post => post %>
       <% if user_signed_in? && current_user.admin? %>
           <hr>
           <%= link_to raw('<i class="material-icons">edit</i>'), edit_post_path(post), class:'btn btn-default' %>

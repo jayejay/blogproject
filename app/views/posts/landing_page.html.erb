@@ -5,10 +5,12 @@
       <%= link_to(@gaming_post.first) do %>
         <div class="card-image landing_page_images"
              style="background-image: url('<%= @gaming_post.first.image_url %>')">
+
         </div>
       <% end %>
 
       <div class="content">
+        <%= render 'posts/post_author', :post => @gaming_post.first %>
         <h6 class="category text-info"><%= @gaming_post.first.category.name %></h6>
         <h4 class="card-title">
           <a href="#pablo"><%= @gaming_post.first.title %></a>
@@ -29,6 +31,7 @@
       <% end %>
 
       <div class="content">
+        <%= render 'posts/post_author', :post => @sports_post.first %>
         <h6 class="category text-info"><%= @sports_post.first.category.name %></h6>
         <h4 class="card-title">
           <a href="#pablo"><%= @sports_post.first.title %></a>
@@ -49,6 +52,7 @@
       <% end %>
 
       <div class="content">
+        <%= render 'posts/post_author', :post => @Nutrition_post.first %>
         <h6 class="category text-info"><%= @Nutrition_post.first.category.name %></h6>
         <h4 class="card-title">
           <a href="#pablo"><%= @Nutrition_post.first.title %></a>
