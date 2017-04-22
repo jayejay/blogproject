@@ -18,10 +18,10 @@ class PostsController < ApplicationController
   def index
     if params[:q]
       search_term = params[:q]
-      @posts = Post.search(search_term).paginate(page: params[:page], per_page: 4)
+      @posts = Post.search(search_term).paginate(page: params[:page], per_page: 6)
     else
       @posts = Post.where(active: true).order(created_at: :desc)\
-        .paginate(page: params[:page], per_page: 4)
+        .paginate(page: params[:page], per_page: 6)
     end
 
     @tags = Tag.all
