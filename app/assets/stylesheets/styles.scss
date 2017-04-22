@@ -28,6 +28,11 @@ footer{
 
 //Navigation
 
+#nav li{
+  -webkit-border-radius:0.2%;
+  -moz-border-radius:0.2%;
+  border-radius: 3%;
+}
 
 #nav li a{
  font-size: 1.5em;
@@ -83,10 +88,16 @@ footer{
 
   #nav li:hover{
     background-color: #84ffff;
+    -webkit-transition: background-color 2000ms linear;
+    -ms-transition: background-color 2000ms linear;
+    transition: background-color 2000ms linear;
   }
 
   #nav li a:hover{
     color: #006064;
+    -webkit-transition: color 500ms linear;
+    -ms-transition: color 500ms linear;
+    transition: color 500ms linear;
   }
 
 }
