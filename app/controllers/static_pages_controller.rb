@@ -4,5 +4,7 @@ class StaticPagesController < ApplicationController
     render :layout => 'user_interface'
   end
 
+  def contact
+  end
 
 end
