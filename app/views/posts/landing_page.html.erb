@@ -1,7 +1,8 @@
 <h2 id="header_new_posts" class="title">Aktuelle Beiträge</h2>
 <div class="row">
   <div class="col-md-4">
-    <div class="card card-blog">
+    <div class="card card-blog"
+         style="background-color: <%= @gaming_post.first.category.background_color %>">
       <%= link_to(@gaming_post.first) do %>
         <div class="card-image landing_page_images"
              style="background-image: url('<%= @gaming_post.first.image_url %>')">
@@ -11,7 +12,10 @@
 
       <div class="content">
         <%= render 'posts/post_author', :post => @gaming_post.first %>
-        <h6 class="category text-info"><%= @gaming_post.first.category.name %></h6>
+        <h6 class="category text-info"
+            style="color: <%= @gaming_post.first.category.title_color %>">
+              <%= @gaming_post.first.category.name %>
+        </h6>
         <h4 class="card-title">
           <a href="<%= post_path(@gaming_post.first) %>"><%= @gaming_post.first.title %></a>
         </h4>
@@ -23,7 +27,8 @@
   </div>
 
   <div class="col-md-4">
-    <div class="card card-blog">
+    <div class="card card-blog"
+         style="background-color: <%= @sports_post.first.category.background_color %>">
       <%= link_to(@sports_post.first) do %>
         <div class="card-image landing_page_images"
              style="background-image: url('<%= @sports_post.first.image_url %>')">
@@ -32,7 +37,9 @@
 
       <div class="content">
         <%= render 'posts/post_author', :post => @sports_post.first %>
-        <h6 class="category text-info"><%= @sports_post.first.category.name %></h6>
+        <h6 class="category text-info"
+            style="color: <%= @sports_post.first.category.title_color %>">
+                <%= @sports_post.first.category.name %></h6>
         <h4 class="card-title">
           <a href="<%= post_path(@sports_post.first) %>"><%= @sports_post.first.title %></a>
         </h4>
@@ -44,7 +51,8 @@
   </div>
 
   <div class="col-md-4">
-    <div class="card card-blog">
+    <div class="card card-blog"
+        style="background-color: <%= @Nutrition_post.first.category.background_color %>">
       <%= link_to(@Nutrition_post.first) do %>
         <div class="card-image landing_page_images"
              style="background-image: url('<%= @Nutrition_post.first.image_url %>')">
@@ -53,7 +61,8 @@
 
       <div class="content">
         <%= render 'posts/post_author', :post => @Nutrition_post.first %>
-        <h6 class="category text-info"><%= @Nutrition_post.first.category.name %></h6>
+        <h6 class="category text-info"
+            style="color: <%= @Nutrition_post.first.category.title_color %>"><%= @Nutrition_post.first.category.name %></h6>
         <h4 class="card-title">
           <a href="<%= post_path(@Nutrition_post.first) %>"><%= @Nutrition_post.first.title %></a>
         </h4>
