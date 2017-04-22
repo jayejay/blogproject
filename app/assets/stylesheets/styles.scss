@@ -29,7 +29,6 @@ footer{
 //Navigation
 
 #nav li a{
-
  font-size: 1.5em;
 }
 
@@ -37,10 +36,6 @@ footer{
   color: white;
 }
 
-.logo{
-  width: 50%;
-  margin: 2% 30%;
-}
 
 .search_bar_separator{
   display: none;
@@ -65,12 +60,26 @@ footer{
 
 }
 
+.logo{
+  width: 100%;
+  //margin: 0 20%;
+}
+
+.div_logo{
+  margin: 2% 30%;
+}
+
 @media only screen and (min-width: 768px) {
+
+  .div_logo{
+    margin: 2% auto;
+  }
 
   .logo{
     width: 15%;
-    margin: 2% 43%;
+    margin: 0 43%;
   }
+
 }
 
 .application_container{
@@ -85,12 +94,11 @@ footer{
   
 }
 
-.div_logo{
+.logo_backround{
   background-color: #00bcd4;
   -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
   -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-  padding: 0;
 }
 
 .logo-link{
