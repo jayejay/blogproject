@@ -61,7 +61,10 @@
 
   <div class="field">
 
-    <%= f.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name) %>
+    <%= f.collection_check_boxes(:tag_ids, Tag.order(:name), :id, :name) do |chb| %>
+      <%= chb.text %>
+      <%= chb.check_box %>**
+    <% end %>
 
   </div>
 
