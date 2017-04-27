@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/welcome'
 
+  post 'thanks', to: 'static_pages#thanks'
+
   post '/tinymce_assets', to: 'tinymce_assets#create'
 
   get 'contact', to: 'static_pages#contact'
