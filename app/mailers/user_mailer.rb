@@ -6,8 +6,8 @@ class UserMailer < ApplicationMailer
     @message = message
     @name = name
     mail(:from => email,
-         #:to => 'info.sporting.nerds@gmail.com',
-         :to => 'julian.eissing@t-online.de',
+         :to => 'info.sporting.nerds@gmail.com',
+         #:to => 'julian.eissing@t-online.de',
          :subject => "Sporting-Nerds: Eine neue Nachricht von #{name}")
   end
 end
