@@ -82,5 +82,7 @@ gem 'tinymce-rails'
 
 gem 'will_paginate-bootstrap'
 
+gem 'recaptcha', require: 'recaptcha/rails'
+
 
 

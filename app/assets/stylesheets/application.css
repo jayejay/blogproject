@@ -19,3 +19,8 @@
     box-sizing: border-box;
 }
 
+.alert{
+    font-size: 1.5em;
+    font-weight:400;
+}
+
