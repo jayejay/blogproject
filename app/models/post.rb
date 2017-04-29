@@ -11,7 +11,7 @@ class Post < ApplicationRecord
 
   def get_rating_total
     unless rating.nil?
-      total = rating.gameplay + rating.graphics + rating.sound + rating.price_performance + rating.innovation
+      total = (rating.gameplay + rating.graphics + rating.sound + rating.price_performance + rating.innovation).to_f
       total = total / 5
     else
       total = 0

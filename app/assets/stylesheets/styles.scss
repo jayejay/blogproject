@@ -74,6 +74,22 @@ footer{
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
+/******************/
+/*Welcome Partial*/
+/****************/
+.welcome{
+  font-size: 1.5em;
+  font-weight:400;
+  color: #546e7a;
+  background-color: rgb(178, 235, 242);
+  padding: 2%;
+  -webkit-border-radius:0.1%;
+  -moz-border-radius:0.1%;
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+}
+
 /*************/
 /*Side-Stuff*/
 /***********/
@@ -102,6 +118,10 @@ footer{
 
 @media only screen and (max-width: 991px) {
   .nav_social_media {
+    display: none;
+  }
+
+  .welcome{
     display: none;
   }
 
