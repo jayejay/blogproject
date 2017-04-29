@@ -1,16 +1,18 @@
 <div class="content_wrapper">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 about_us">
       <h2 class="title">Über uns</h2>
       <p>
-        Hier steht ein bisschen allgemeiner Stuff über die Sporting Nerds...
-        wieso weshalb und warum und so bla bla...
-        <%= link_to 'Schreib uns einfach', contact_path %>
+        Gamer mit Muskeln? Sportler, die sich beim Workout den "Imperial March" reinballern?  Beim Zocken essen und trotzdem auf seine Ernährung achten? Ihr glaubt so etwas kann es gar nicht geben? Falsch gedacht.
+        Wir sind die Sporting Nerds: Zocker aus Leidenschaft; Fitness-Junkies durch und durch; Nerds mit Ambitionen!
+      </p>
+      <p>
+        Und das hier ist unser Team:
       </p>
     </div>
   </div>
   <hr>
-  <div class="row">
+  <div class="row user_index">
     <% @users.each do |user| %>
       <div class="col-md-6">
         <div class="card card-profile card-plain">
@@ -45,5 +47,6 @@
         </div>
       </div>
     <% end %>
+    <p>Lust uns etwas mitzuteilen? <%= link_to 'Schreib uns einfach', contact_path %></p>
   </div>
 </div>
