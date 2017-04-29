@@ -8,12 +8,12 @@ class StaticPagesController < ApplicationController
   end
 
   def thanks
+    @name = params[:name]
+    @email = params[:email]
+    @message = params[:message]
     if verify_recaptcha
-      @name = params[:name]
-      @email = params[:email]
-      @message = params[:message]
       UserMailer.contact_form(@email, @name, @message).deliver_now
-      redirect_to contact_path, notice: 'Danke für deine Nachricht'
+      redirect_to contact_path, notice: 'Danke für deine Nachricht!'
     else
       redirect_to contact_path, alert: 'Das war wohl nichts :('
     end
