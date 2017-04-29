@@ -1,71 +1,18 @@
 // Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*****************/
+/*Post Show Page*/
+/***************/
 
 .post_main_image{
   width: 100%;
   margin: 3% auto;
 }
 
-.post_preview_image{
-  width: 100%;
-  margin: 5% auto;
-  border-radius: 5%;
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-  -moz-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
-}
-
-#rating{
-  margin-top:5%;
-  margin-bottom:5%;
-}
-
-#rating div{
-  background-image: url(image_path('rating/rating_bar.png'));
-  background-size: cover;
-  text-align: right;
-  color: whitesmoke;
-  margin-bottom:1%;
-  padding: 1%;
-  font-size: 1.1em;
-}
-
-#rating .rating_total{
-  background-image: url(image_path('rating/review_bar_total.png'));
-  color:  #006064;
-  font-size: 1.3em;
-}
-
-.post_form{
-  background-color: rgba(255,255,255,1);
-  padding: 1%;
-}
-
-.post_form_sidebar h3{
-  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
-  -moz-box-shadow:  1px 1px 1px 1px rgba(0,0,0,0.2);
-  box-shadow:  1px 1px 1px 1px rgba(0,0,0,0.2);
-  text-align: center;
-  margin-bottom: 7%;
-}
-
 .blog-text{
   line-height: 1.5em;
   color: rgb(85, 85, 85);
   font-size: 1.35em;
-}
-
-//landing-page
-.landing_page_images{
-  background-size: cover;
-  min-height: 200px;
-  max-height: 200px;
-}
-
-#header_new_posts{
-  text-align: center;
-  margin-bottom: 5%;
 }
 
 .inline_post_images{
@@ -80,6 +27,16 @@
   color: #eceff1;
 }
 
+.social_media,
+.social_media .col-md-4,
+.social_media .col-md-3{
+  padding-left: 0;
+}
+
+/******************/
+/*Post Index Page*/
+/****************/
+
 .post-image-index{
   margin: 10% 3%;
   background-color: white;
@@ -89,7 +46,74 @@
   padding: 3%;
 }
 
+/*********/
+/*Rating*/
+/*******/
+
+#rating{
+  margin-top:5%;
+  margin-bottom:5%;
+
+  div{
+    background-image: url(image_path('rating/rating_bar.png'));
+    background-size: cover;
+    text-align: right;
+    color: whitesmoke;
+    margin-bottom:1%;
+    padding: 1%;
+    font-size: 1.1em;
+  }
+
+  .rating_total{
+    background-image: url(image_path('rating/review_bar_total.png'));
+    color:  #006064;
+    font-size: 1.3em;
+  }
+
+}
+/************/
+/*Post Form*/
+/**********/
+
+.post_form{
+  background-color: rgba(255,255,255,1);
+  padding: 1%;
+}
+
+.post_form_sidebar h3{
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2);
+  -moz-box-shadow:  1px 1px 1px 1px rgba(0,0,0,0.2);
+  box-shadow:  1px 1px 1px 1px rgba(0,0,0,0.2);
+  text-align: center;
+  margin-bottom: 7%;
+}
+
+/***************/
+/*Landing Page*/
+/*************/
+
+.landing_page_images{
+  background-size: cover;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+#header_new_posts{
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.card-image{
+  background-position: center;
+}
+
+
+/****************/
+/*Media Queries*/
+/**************/
+
 @media only screen and (min-width: 768px){
+
   .content_wrapper{
     -webkit-box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
@@ -100,23 +124,16 @@
     margin-bottom: 2%;
   }
 
-  #rating div{
-    font-size: 1.5em;
+  #rating{
+
+    div{
+      font-size: 1.5em;
+    }
+
+    .rating_total{
+      font-size: 1.7em;
+    }
   }
-
-  #rating .rating_total{
-    font-size: 1.7em;
-  }
 }
 
-.social_media,
-.social_media .col-md-4,
-.social_media .col-md-3{
-  padding-left: 0;
-}
-
-//landing-page
-.card-image{
-  background-position: center;
-}
 

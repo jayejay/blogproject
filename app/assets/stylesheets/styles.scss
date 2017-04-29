@@ -5,8 +5,6 @@ body{
   background-image: url(asset_path("backgrounds/white.png"));
   background-attachment: fixed;
   background-size: cover;
-  //font-family: 'Open Sans', sans-serif;
-  //font-size: 1.5em;
 }
 
 a{
@@ -14,92 +12,12 @@ a{
   font-size: 1.1em;
 }
 
-
-code {
-  font-family: monospace;
-}
+code {font-family: monospace;}
 
 footer{
   position: relative;
   z-index: 1;
   margin-top: -0.5%;
-}
-
-
-//Navigation
-
-#nav li{
-  -webkit-border-radius:0.2%;
-  -moz-border-radius:0.2%;
-  border-radius: 3%;
-}
-
-#nav li a{
- font-size: 1.5em;
-}
-
-.btn.btn-simple, .btn.btn-default.btn-simple, .navbar .navbar-nav > li > a.btn.btn-simple, .navbar .navbar-nav > li > a.btn.btn-default.btn-simple {
-  color: white;
-}
-
-
-.search_bar_separator{
-  display: none;
-}
-
-.twitter{
-  margin-top: 0;
-}
-
-@media only screen and (max-width: 991px) {
-  .nav_social_media {
-    display: none;
-  }
-
-  .search_bar_separator{
-    display: block;  
-  }
-
-  .twitter{
-    margin-top: 1%;
-  }
-
-}
-
-.logo{
-  width: 100%;
-  //margin: 0 20%;
-}
-
-.div_logo{
-  margin: 2% 30%;
-}
-
-@media only screen and (min-width: 768px) {
-
-  .div_logo{
-    margin: 2% auto;
-  }
-
-  .logo{
-    width: 20%;
-    margin: 0 40%;
-  }
-
-  #nav li:hover{
-    background-color: #84ffff;
-    -webkit-transition: background-color 2000ms linear;
-    -ms-transition: background-color 2000ms linear;
-    transition: background-color 2000ms linear;
-  }
-
-  #nav li a:hover{
-    color: #006064;
-    -webkit-transition: color 500ms linear;
-    -ms-transition: color 500ms linear;
-    transition: color 500ms linear;
-  }
-
 }
 
 .application_container{
@@ -111,8 +29,43 @@ footer{
   margin-top: -1%;
   position: relative;
   z-index: 2;
-  
 }
+
+/*************/
+/*Navigation*/
+/***********/
+#nav {
+
+  li {
+    -webkit-border-radius: 0.2%;
+    -moz-border-radius: 0.2%;
+    border-radius: 3%;
+  }
+
+  li a {font-size: 1.5em;}
+}
+
+#admin li a:hover{color: black;}
+
+.btn.btn-simple,
+.btn.btn-default.btn-simple,
+.navbar .navbar-nav > li > a.btn.btn-simple,
+.navbar .navbar-nav > li > a.btn.btn-default.btn-simple {
+  color: white;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  width: auto;
+}
+
+/*******/
+/*Logo*/
+/******/
+
+.logo{width: 100%;  }
+
+.div_logo{margin: 2% 30%;}
 
 .logo_backround{
   background-color: #00bcd4;
@@ -121,52 +74,66 @@ footer{
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5);
 }
 
-.logo-link{
-  height: 50px;
-  padding: 0;
-}
+/*************/
+/*Side-Stuff*/
+/***********/
 
-.anchor{
-  padding-top: 50px;
-}
+.separator{margin: 0 auto;}
 
-.navbar-brand>img {
-  height: 100%;
-  width: auto;
-}
-
-.thumbnail{
-  background: rgba(255,255,255,0.9);
-}
-
-.admin-sidebar{
-  position: fixed;
-  top:10%;
-  right:70%;
-}
-
-.separator{
-  margin: 0 auto;
-}
+.search_bar_separator{display: none;}
 
 #load_more_posts {
   display: none;
   margin-bottom: 10px; /* Some margin to separate it from the footer */
 }
 
-#admin li a:hover{
-  color: black;
+.separator{margin: 3% auto;}
+
+/**********************/
+/*Social Media Button*/
+/********************/
+
+.twitter{margin-top: 0;}
+
+
+/****************/
+/*Media Queries*/
+/**************/
+
+@media only screen and (max-width: 991px) {
+  .nav_social_media {
+    display: none;
+  }
+
+  .search_bar_separator{display: block;}
+
+  .twitter{margin-top: 1%;}
+
 }
 
-#table-user-index th{
-  font-size:1em;
+@media only screen and (min-width: 768px) {
+
+  .div_logo{margin: 2% auto;}
+
+  .logo{
+    width: 20%;
+    margin: 0 40%;
+  }
+
+  #nav {
+    li:hover{
+      background-color: #84ffff;
+      -webkit-transition: background-color 2000ms linear;
+      -ms-transition: background-color 2000ms linear;
+      transition: background-color 2000ms linear;
+    }
+
+    li a:hover{
+      color: #006064;
+      -webkit-transition: color 500ms linear;
+      -ms-transition: color 500ms linear;
+      transition: color 500ms linear;
+    }
+  }
 }
-
-.separator{
-  margin: 3% auto;
-}
-
-
-
-
 

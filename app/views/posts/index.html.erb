@@ -1,5 +1,9 @@
 <div id="posts">
-  <%= render @posts  %>
+  <% if @posts.length>0 %>
+    <%= render @posts  %>
+  <% else  %>
+    <h4 class="title">Leider wurden keine passenden Beiträge gefunden.</h4>
+  <% end %>
 </div>
 
 <div id="with-button">

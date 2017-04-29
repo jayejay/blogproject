@@ -1,12 +1,16 @@
 // Place all the styles related to the Tags controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
+/******************/
+/*Tags index page*/
+/****************/
 .table_tags{
   width: 50%;
 }
 
+/*********************/
+/*Tags on side stuff*/
+/*******************/
 .btn-success .badge {
-  color: #212c6e;
-  background-color: #ffaa33;
+  color: #263238;
+  background-color: #eceff1;
 }
