@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  root 'posts#landing_page'
+  #root 'posts#landing_page'
 
-  #root 'static_pages#welcome'
+  root 'static_pages#welcome'
 
   #get 'static_pages/welcome'
 
