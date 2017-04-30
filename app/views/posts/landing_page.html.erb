@@ -1,3 +1,17 @@
+<% content_for :head do %>
+    <meta property="og:url" content="<%= home_url + '/' %>" />
+    <meta property="fb:app_id" content="326019507801319" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Sporting Nerds - no gain no game" />
+    <meta property="og:description" content="Gamer mit Muskeln? Sportler,
+        die sich beim Workout den 'Imperial March' reinballern?
+        Beim Zocken essen und trotzdem auf seine Ernährung achten?
+        Ihr glaubt so etwas kann es gar nicht geben? Falsch gedacht.
+        Wir sind die Sporting Nerds: Zocker aus Leidenschaft;
+        Fitness-Junkies durch und durch; Nerds mit Ambitionen!" />
+    <meta property="og:image" content="<%= image_url('material_logo.png') %>" />
+<% end %>
+
 <%= render 'shared/welcome_text' %>
 <h2 id="header_new_posts" class="title">Aktuelle Beiträge</h2>
 <div class="row">
@@ -75,8 +89,10 @@
   </div>
 </div><!--end row-->
 <hr>
+<!--Share Buttons-->
 <div class="row">
-
-  <%#= render 'shared/social_media_links'  %>
-
+  <div class="col-md-6 social_media">
+    <%= render partial: 'shared/social_media_share', locals: {data_href: home_url + '/',\
+        tweet_text: 'Sporting Nerds - no pain no game'}  %>
+  </div>
 </div><!--end row-->

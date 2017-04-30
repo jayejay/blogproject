@@ -37,9 +37,12 @@
               <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fa fa-google"></i></a>-->
               <hr>
               <% if user_signed_in? && current_user.admin? %>
-                <%= link_to raw('<i class="material-icons">person</i>'), user, class: 'btn btn-info btn-sm' %>
-                <%= link_to raw('<i class="material-icons">edit</i>'), edit_user_path(user), class: 'btn btn-warning btn-sm' %>
-                <%= link_to raw('<i class="material-icons">close</i>'), user, method: :delete, data: { confirm: 'Are you sure?' },\
+                <%= link_to raw('<i class="material-icons">person</i>'),\
+                    user, class: 'btn btn-info btn-sm' %>
+                <%= link_to raw('<i class="material-icons">edit</i>'),\
+                    edit_user_path(user), class: 'btn btn-warning btn-sm' %>
+                <%= link_to raw('<i class="material-icons">close</i>'),\
+                    user, method: :delete, data: { confirm: 'Are you sure?' },\
                 class: 'btn btn-danger btn-sm' %>
               <% end %>
             </div>
@@ -47,6 +50,9 @@
         </div>
       </div>
     <% end %>
-    <p>Lust uns etwas mitzuteilen? <i class="material-icons">email</i> <%= link_to 'Kontakt', contact_path %></p>
-  </div>
+    <div class="about_contact_link">
+      <p>Lust uns etwas mitzuteilen? <i class="material-icons">email</i>
+        <%= link_to 'Kontakt', contact_path %></p>
+    </div>
+    </div>
 </div>

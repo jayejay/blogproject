@@ -15,22 +15,14 @@
     <%= content_tag(:h3,@post.title, class: 'title') %>
     <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
     <br>
+
+    <!--Share Buttons-->
     <div class="col-md-12 social_media">
-      <div class="fb-like col-md-4"
-           data-href="<%= post_url(@post) %>"
-           data-layout="button_count" data-action="like"
-           data-size="large"
-           data-show-faces="false" data-share="true">
-      </div>
-      <div class="twitter col-md-3">
-        <a class="twitter-share-button"
-           href="https://twitter.com/intent/tweet?text=<%= @post.title %>" data-size="large">
-          Tweet
-        </a>
-        <script src="//platform.twitter.com/widgets.js"></script>
-      </div>
+      <%= render partial: 'shared/social_media_share', locals: {data_href: post_url(@post), tweet_text: @post.title} %>
     </div>
+
     <hr>
+
     <% @post.tags.order(:name).each do |tag| %>
         <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
            style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
