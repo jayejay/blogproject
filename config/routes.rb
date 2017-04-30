@@ -2,21 +2,25 @@ Rails.application.routes.draw do
 
   resources :tags
 
+
   get 'posts/gaming', to: 'categories#gaming_index'
   get 'posts/sports', to: 'categories#sports_index'
   get 'posts/nutrition', to: 'categories#nutrition_index'
   get 'posts/fun', to: 'categories#fun_index'
   get 'posts/unpublished', to: 'categories#unpublished_index'
+  get 'home', to: 'static_pages#landing_page'
 
   resources :posts
+
+
 
   devise_for :users
 
   resources :users
 
-  #root 'posts#landing_page'
+  root 'static_pages#landing_page'
 
-  root 'static_pages#welcome'
+  #root 'static_pages#welcome'
 
   #get 'static_pages/welcome'
 

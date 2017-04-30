@@ -7,6 +7,16 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  def landing_page
+    @gaming_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Gaming', true).\
+      order(published_at: :desc).limit(1)
+    @sports_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Sports', true).\
+      order(published_at: :desc).limit(1)
+    @Nutrition_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Nutrition', true).\
+      order(published_at: :desc).limit(1)
+    render :layout => 'wider_layout'
+  end
+
   def thanks
     @name = params[:name]
     @email = params[:email]
