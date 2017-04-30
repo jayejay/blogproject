@@ -8,15 +8,13 @@ Rails.application.routes.draw do
   get 'posts/fun', to: 'categories#fun_index'
   get 'posts/unpublished', to: 'categories#unpublished_index'
 
-  #get 'home', to: 'posts#landing_page'
-
-  root 'posts#landing_page'
-
   resources :posts
 
   devise_for :users
 
   resources :users
+
+  root 'posts#landing_page'
 
   #root 'static_pages#welcome'
 
