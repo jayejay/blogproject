@@ -9,13 +9,15 @@ Rails.application.routes.draw do
   get 'posts/unpublished', to: 'categories#unpublished_index'
   get 'home', to: 'posts#landing_page'
 
+  root 'posts#landing_page'
+
   resources :posts
 
   devise_for :users
 
   resources :users
 
-  root 'static_pages#welcome'
+  #root 'static_pages#welcome'
 
   get 'static_pages/welcome'
 
