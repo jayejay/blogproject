@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   get 'posts/nutrition', to: 'categories#nutrition_index'
   get 'posts/fun', to: 'categories#fun_index'
   get 'posts/unpublished', to: 'categories#unpublished_index'
-  get 'home', to: 'posts#landing_page'
 
-  #root 'posts#landing_page'
-  root 'posts#index'
+  #get 'home', to: 'posts#landing_page'
+
+  root 'posts#landing_page'
+
   resources :posts
 
   devise_for :users
