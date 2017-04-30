@@ -1,6 +1,6 @@
 <div class="author">
   <i class="material-icons">face</i>
-  <a href="<%= users_path%>" style="color:<%= post.user.text_color %>"><%= post.user.nick_name %></a>
+  <a href="<%= about_path %>" style="color:<%= post.user.text_color %>"><%= post.user.nick_name %></a>
   <i class="material-icons">access_time</i>
   <% unless post.published_at.nil?  %>
       <%=  post.published_at.strftime('%d.%m.%Y') %>
