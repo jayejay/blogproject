@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :except => [:show, :index]
+  before_action :authenticate_user!, :except => [:show, :index, :landing_page]
   load_and_authorize_resource
 
   def landing_page
