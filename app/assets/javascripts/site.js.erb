@@ -1,6 +1,15 @@
 $(document).on('turbolinks:load', function () {
 
     $(function() {
+
+        window.cookieconsent_options = {
+            message: 'Diese Website nutzt Cookies (auch von Drittanbietern), um bestmögliche Funktionalität bieten zu können.',
+            dismiss: 'Ok, verstanden',
+            learnMore: 'Mehr Infos',
+            link: 'http://www.sporting-nerds.com/impressum',
+            theme: 'light-floating'
+        };
+
         $('.textarea').tinymce({
             plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker' +
             ' table media code',
