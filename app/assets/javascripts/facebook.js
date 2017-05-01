@@ -1,6 +1,16 @@
 // FacebookSDK
 // https://developers.facebook.com/docs/plugins/page-plugin/
 
+/*Log app Events*/
+window.fbAsyncInit = function() {
+    FB.init({
+        appId      : 'your-app-id',
+        xfbml      : true,
+        version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+};
+
 /*Facebook likes*/
  (function(d, s, id) {
  var js, fjs = d.getElementsByTagName(s)[0];
