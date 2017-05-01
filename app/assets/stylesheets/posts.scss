@@ -15,8 +15,20 @@
   font-size: 1.35em;
 }
 
-.inline_post_images{
+.high_pics{
   margin: 1% auto;
+  padding: 0.7%;
+  background-color: #263238;
+  font-size: 0.7em;
+  //display: inline-block;
+  -webkit-border-radius:1%;
+  -moz-border-radius:1%;
+  border-radius:2%;
+  color: #eceff1;
+}
+
+.normal_pics{
+  margin: 1% 0;
   padding: 0.7%;
   background-color: #263238;
   font-size: 0.7em;
