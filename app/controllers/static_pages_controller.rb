@@ -27,7 +27,9 @@ class StaticPagesController < ApplicationController
     else
       redirect_to contact_path, alert: 'Das war wohl nichts :('
     end
+  end
 
+  def impressum
   end
 
 end
