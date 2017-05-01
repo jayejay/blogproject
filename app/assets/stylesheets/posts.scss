@@ -15,8 +15,7 @@
   font-size: 1.35em;
 }
 
-.high_pics{
-  margin: 1% auto;
+.pics{
   padding: 0.7%;
   background-color: #263238;
   font-size: 0.7em;
@@ -25,18 +24,17 @@
   -moz-border-radius:1%;
   border-radius:2%;
   color: #eceff1;
+  font-weight: 400;
+}
+
+.high_pics{
+  @extend .pics;
+  margin: 1% auto;
 }
 
 .normal_pics{
+  @extend .pics;
   margin: 1% 0;
-  padding: 0.7%;
-  background-color: #263238;
-  font-size: 0.7em;
-  //display: inline-block;
-  -webkit-border-radius:1%;
-  -moz-border-radius:1%;
-  border-radius:2%;
-  color: #eceff1;
 }
 
 .social_media,
