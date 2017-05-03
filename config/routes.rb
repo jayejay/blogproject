@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'posts/unpublished', to: 'categories#unpublished_index'
   get 'home', to: 'static_pages#landing_page'
   get 'impressum', to: 'static_pages#impressum'
+  get 'datenschutzerklarung', to: 'static_pages#datenschutz'
 
   resources :posts
 
