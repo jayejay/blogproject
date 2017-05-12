@@ -10,8 +10,9 @@ $(document).on('turbolinks:load', function () {
             theme: 'light-floating'
         };
 
-        $('.textarea').tinymce({
-            script_url: "<%= javascript_path('tinymce/js/tinymce/jquery.tinymce.min.js')%>",
+        tinymce.init({
+            selector: 'textarea',
+            language_url : "<%= javascript_path('tinymce/langs/de.js')%>",
             plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker' +
             ' table media code',
             external_plugins: {
