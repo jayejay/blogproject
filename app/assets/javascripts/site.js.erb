@@ -11,6 +11,7 @@ $(document).on('turbolinks:load', function () {
         };
 
         $('.textarea').tinymce({
+            script_url: "<%= javascript_path('tinymce/js/tinymce/jquery.tinymce.min.js')%>",
             plugins : 'advlist autolink link image lists charmap print preview imagetools textcolor colorpicker' +
             ' table media code',
             external_plugins: {
