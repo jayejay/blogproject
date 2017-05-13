@@ -21,9 +21,9 @@
     <%= content_tag(:h3,@post.title, class: 'title') %>
     <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
     <br>
-
+    <hr>
     <!--Share Buttons-->
-    <div class="col-md-12 social_media">
+    <div class="row">
       <%= render partial: 'shared/social_media_share', locals: {data_href: post_url(@post), tweet_text: @post.title} %>
     </div>
 
