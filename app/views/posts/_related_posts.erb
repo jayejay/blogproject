@@ -1,5 +1,5 @@
 <% related_posts = Post.where(:category_id => @post.category.id)\
-    .where('posts.id != ? AND active = ?', @post, true ).order(id: :desc).last(3) %>
+    .where('posts.id != ? AND active = ?', @post, true ).order(id: :desc).first(3) %>
 <h4 class="title" style="color: <%= @post.category.title_color %>">Weitere <%= @post.category.name %> Beiträge</h4>
 <hr>
 <% related_posts.each do |post| %>
