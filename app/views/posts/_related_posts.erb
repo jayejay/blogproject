@@ -1,4 +1,4 @@
-<% related_posts = Post.where(:category_id => @post.category.id).last(3) %>
+<% related_posts = Post.where(:category_id => @post.category.id).where('posts.id != ?', @post ).last(3) %>
 <h4 class="title" style="color: <%= @post.category.title_color %>">Weitere <%= @post.category.name %> Beiträge</h4>
 <hr>
 <% related_posts.each do |post| %>
