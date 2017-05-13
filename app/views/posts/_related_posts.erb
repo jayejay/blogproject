@@ -1,0 +1,9 @@
+<% related_posts = Post.where(:category_id => @post.category.id).last(3) %>
+<h4 class="title" style="color: <%= @post.category.title_color %>">Weitere <%= @post.category.name %> Beiträge</h4>
+<% related_posts.each do |post| %>
+    <a href="<%= post_path %>">
+      <h6 class=""><%= post.title %></h6>
+      <%= truncate_html(post.content, length: 50, omission: '...' )%>
+    </a>
+
+<% end %>

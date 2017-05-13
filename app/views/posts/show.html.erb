@@ -23,11 +23,22 @@
 
     <hr>
 
-    <% @post.tags.order(:name).each do |tag| %>
-        <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
-           style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name  %></a>
-    <% end %>
+    <div class="row">
+        <div class="col-md-12">
+        <% @post.tags.order(:name).each do |tag| %>
+            <a href="<%= tag_path(tag) %>" class="btn btn-success btn-xs"
+               style="background-color:<%= tag.color %>; color:<%= tag.text_color %>"><%= tag.name %></a>
+        <% end %>
+      </div>
+    </div>
 
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12">
+         <%= render 'related_posts' %>
+      </div>
+    </div>
   </div>
 
   <% if @post.get_rating_total > 1  %>
