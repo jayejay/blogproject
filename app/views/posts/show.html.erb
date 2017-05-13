@@ -32,26 +32,31 @@
       </div>
     </div>
     <br>
-    <div class="row">
-      <div class="col-md-12">
-         <%= render 'related_posts' %>
-      </div>
-    </div>
+
   </div>
 
   <% if @post.get_rating_total > 1  %>
-    <div id="rating" class="">
-        <h3>Review</h3>
-        <!--<ul class="rating-table">-->
-          <div style="width:<%= 30 + @rating.gameplay*7 %>%;">Gameplay <b><%= @rating.gameplay.to_s %></b></div>
-          <div style="width:<%= 30 + @rating.graphics*7 %>%;">Graphics <b><%= @rating.graphics.to_s %></b></div>
-          <div style="width:<%= 30 + @rating.sound*7 %>%;">Sound <b><%= @rating.sound.to_s %></b></div>
-          <div style="width:<%= 30 +  @rating.innovation*7 %>%;">Innovation <b><%= @rating.innovation.to_s %></b></div>
-          <div style="width:<%= 30 + @rating.price_performance*7 %>%;">Price-Performance <b><%= @rating.price_performance.to_s %></b></div>
-          <div style="width:<%= 30 + @post.get_rating_total*7 %>%;" class="rating_total"><strong>Total</strong> <b><%= @post.get_rating_total.to_s  %></b></div>
-        <!--</ul>-->
+    <div class="content_wrapper">
+      <div id="rating" class="">
+          <h3>Bewertung</h3>
+          <!--<ul class="rating-table">-->
+            <div style="width:<%= 30 + @rating.gameplay*7 %>%;">Gameplay <b><%= @rating.gameplay.to_s %></b></div>
+            <div style="width:<%= 30 + @rating.graphics*7 %>%;">Graphics <b><%= @rating.graphics.to_s %></b></div>
+            <div style="width:<%= 30 + @rating.sound*7 %>%;">Sound <b><%= @rating.sound.to_s %></b></div>
+            <div style="width:<%= 30 +  @rating.innovation*7 %>%;">Innovation <b><%= @rating.innovation.to_s %></b></div>
+            <div style="width:<%= 30 + @rating.price_performance*7 %>%;">Price-Performance <b><%= @rating.price_performance.to_s %></b></div>
+            <div style="width:<%= 30 + @post.get_rating_total*7 %>%;" class="rating_total"><strong>Total</strong> <b><%= @post.get_rating_total.to_s  %></b></div>
+          <!--</ul>-->
+      </div>
     </div>
   <% end %>
+  <div class="content_wrapper">
+    <div class="row">
+      <div class="col-md-12">
+        <%= render 'related_posts' %>
+      </div>
+    </div>
+  </div>
 
   <div class="">
     <% if signed_in? && current_user.admin? %>
