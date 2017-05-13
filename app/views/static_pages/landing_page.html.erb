@@ -13,6 +13,18 @@
 <% end %>
 
 <%= render 'shared/welcome_text' %>
+<hr>
+<!--Share Buttons-->
+<div class="row">
+  <div class="col-md-7 social_media">
+    <%= render partial: 'shared/social_media_share', locals: {data_href: root_url + '/',\
+        tweet_text: 'Sporting Nerds - no pain no game'}  %>
+  </div>
+  <div class="col-md-5">
+    <%= render 'shared/google_adsense' %>
+  </div>
+</div><!--end row-->
+
 <h2 id="header_new_posts" class="title">Aktuelle Beiträge</h2>
 <div class="row">
   <div class="col-md-4">
@@ -89,13 +101,7 @@
   </div>
 </div><!--end row-->
 <hr>
-<!--Share Buttons-->
+
 <div class="row">
-  <div class="col-md-7 social_media">
-    <%= render partial: 'shared/social_media_share', locals: {data_href: root_url + '/',\
-        tweet_text: 'Sporting Nerds - no pain no game'}  %>
-  </div>
-</div><!--end row-->
-<div class="row">
-  <%= render 'shared/google_adsense' %>
+  <%#= render 'shared/google_adsense' %>
 </div>
