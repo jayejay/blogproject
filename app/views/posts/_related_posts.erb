@@ -1,10 +1,17 @@
-<% related_posts = Post.where(:category_id => @post.category.id).where('posts.id != ? AND active = ?', @post, true ).last(3) %>
+<% related_posts = Post.where(:category_id => @post.category.id)\
+    .where('posts.id != ? AND active = ?', @post, true ).order(id: :desc).last(3) %>
 <h4 class="title" style="color: <%= @post.category.title_color %>">Weitere <%= @post.category.name %> Beiträge</h4>
 <hr>
 <% related_posts.each do |post| %>
     <a href="<%= post_path(post) %>">
       <h6 class="title"><%= post.title %></h6>
-      <%= truncate_html(post.content, length: 100, omission: '...' )%>
+      <%= truncate_html(post.content, length: 150, omission: '...' )%>
     </a>
+    <a href="<%= about_path %>" style="color:<%= post.user.text_color %>"><%= post.user.nick_name %></a>,
+    <% unless post.published_at.nil?  %>
+        <%=  post.published_at.strftime('%d.%m.%Y') %>
+    <% else %>
+        <%=  post.created_at.strftime('%d.%m.%Y') %>
+    <% end %>
     <hr>
 <% end %>
