@@ -35,7 +35,7 @@
           <a href="<%= post_path(@gaming_post.first) %>"><%= @gaming_post.first.title %></a>
         </h4>
         <p class="card-description">
-          <%= truncate_html(@gaming_post.first.content, length: 200, omission: '...' )%>
+          <%= strip_tags(truncate_html(@gaming_post.first.content, length: 200, omission: '...' ))%>
         </p>
       </div><!--end content-->
     </div><!--end card-blog-->
@@ -59,7 +59,7 @@
           <a href="<%= post_path(@sports_post.first) %>"><%= @sports_post.first.title %></a>
         </h4>
         <p class="card-description">
-          <%= truncate_html(@sports_post.first.content, length: 200, omission: '...' )%>
+          <%= strip_tags(truncate_html(@sports_post.first.content, length: 200, omission: '...' ))%>
         </p>
       </div><!--end content-->
     </div><!--end card-blog-->
@@ -82,7 +82,7 @@
           <a href="<%= post_path(@Nutrition_post.first) %>"><%= @Nutrition_post.first.title %></a>
         </h4>
         <p class="card-description">
-          <%= truncate_html(@Nutrition_post.first.content, length: 200, omission: '...' )%>
+          <%= strip_tags(truncate_html(@Nutrition_post.first.content, length: 200, omission: '...' ))%>
         </p>
       </div><!--end content-->
     </div><!--end card-blog-->

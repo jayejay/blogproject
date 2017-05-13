@@ -5,8 +5,10 @@
 <% related_posts.each do |post| %>
     <a href="<%= post_path(post) %>">
       <h6 class="title"><%= post.title %></h6>
-      <%= truncate_html(post.content, length: 150, omission: '...' )%>
+      <%= strip_tags(truncate_html(post.content, length: 150, omission: '...' ))%>
     </a>
+    <br>
+    <br>
     <a href="<%= about_path %>" style="color:<%= post.user.text_color %>"><%= post.user.nick_name %></a>,
     <% unless post.published_at.nil?  %>
         <%=  post.published_at.strftime('%d.%m.%Y') %>
