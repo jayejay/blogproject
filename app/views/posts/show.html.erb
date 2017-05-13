@@ -11,6 +11,12 @@
     <%= image_tag @post.image_url.url, class: 'img img-raised post_main_image' %>
     <%= render 'posts/post_author', post: @post %>
     <hr>
+    <!--Share Buttons-->
+    <div class="row">
+      <%= render partial: 'shared/social_media_share', locals: {data_href: post_url(@post), tweet_text: @post.title} %>
+    </div>
+    <hr>
+
     <h6 class="category text-info"><%= @post.category.name %></h6>
     <%= content_tag(:h3,@post.title, class: 'title') %>
     <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
