@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def feed
-    @posts = Post.where(active: true).order(published_at: :desc).last(5)
+    @posts = Post.where(active: true).order(published_at: :desc).first(5)
     respond_to do |format|
       format.rss { render :layout => false }
     end
