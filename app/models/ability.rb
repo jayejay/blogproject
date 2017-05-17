@@ -21,7 +21,6 @@ class Ability
       elsif user.moderator?
         can :manage, :all
       else
-        #todo: posts not readable
         can :read, Post
         can :read, Tag
       end

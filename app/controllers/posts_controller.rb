@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :except => [:show, :index, :landing_page]
+  before_action :authenticate_user!, :except => [:show, :index, :feed]
   load_and_authorize_resource
+  skip_authorize_resource :only => :feed
 
 
   # GET /posts
@@ -15,16 +16,12 @@ class PostsController < ApplicationController
         .paginate(page: params[:page], per_page: 6)
     end
     @tags = Tag.all
-
   end
 
   def feed
-
-    @posts = Post.last(3)
-
+    @posts = Post.last(5)
     respond_to do |format|
-      format.html
-      format.rss {render :layout => false}
+      format.rss { render :layout => false }
     end
   end
 
