@@ -14,8 +14,12 @@ class PostsController < ApplicationController
       @posts = Post.where(active: true).order(published_at: :desc)\
         .paginate(page: params[:page], per_page: 6)
     end
-
     @tags = Tag.all
+
+    respond_to do |format|
+      format.html
+      format.rss {render :layout => false}
+    end
 
   end
 
