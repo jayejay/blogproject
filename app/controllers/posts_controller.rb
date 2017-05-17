@@ -16,11 +16,16 @@ class PostsController < ApplicationController
     end
     @tags = Tag.all
 
+  end
+
+  def feed
+
+    @posts = Post.last(3)
+
     respond_to do |format|
       format.html
       format.rss {render :layout => false}
     end
-
   end
 
   # GET /posts/1
