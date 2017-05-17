@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   end
 
   def feed
-    @posts = Post.last(5)
+    @posts = Post.where(active: true).order(published_at: :desc).last(5)
     respond_to do |format|
       format.rss { render :layout => false }
     end
@@ -28,7 +28,6 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    #@comments = @post.comments.order("created_at DESC")
     @rating = @post.rating
   end
 
