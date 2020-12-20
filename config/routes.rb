@@ -1,7 +1,7 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-
   resources :tags
-
 
   get 'posts/gaming', to: 'categories#gaming_index'
   get 'posts/sports', to: 'categories#sports_index'
@@ -22,9 +22,9 @@ Rails.application.routes.draw do
 
   root 'static_pages#landing_page'
 
-  #root 'static_pages#welcome'
+  # root 'static_pages#welcome'
 
-  #get 'static_pages/welcome'
+  # get 'static_pages/welcome'
 
   post 'thanks', to: 'static_pages#thanks'
 

@@ -2,7 +2,7 @@
   <h3 class="title">Häufige Tags</h3>
 
   <table>
-    <% Tag.joins(:posts).group('tags.id').where(:posts => {:active => true}).order('COUNT(*) DESC').take(5).each do |t| %>
+    <% Tag.joins(:posts).group('tags.id').where(:posts => {:active => true}).order('COUNT(posts.id) DESC').take(5).each do |t| %>
         <tr>
           <td><%= link_to raw(t.name + ' <span class="badge">' + t.posts.where(:posts => {:active => true}).count.to_s\
             + '</span>'), tag_path(t.id),\

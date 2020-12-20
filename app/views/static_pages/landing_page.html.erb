@@ -75,22 +75,22 @@
 
   <div class="col-md-4">
     <div class="card card-blog"
-        style="background-color: <%= @Nutrition_post.first.category.background_color %>">
-      <%= link_to(@Nutrition_post.first) do %>
+        style="background-color: <%= @nutrition_post.first.category.background_color %>">
+      <%= link_to(@nutrition_post.first) do %>
         <div class="card-image landing_page_images"
-             style="background-image: url('<%= @Nutrition_post.first.image_url %>')">
+             style="background-image: url('<%= @nutrition_post.first.image_url %>')">
         </div>
       <% end %>
 
       <div class="content">
-        <%= render 'posts/post_author', :post => @Nutrition_post.first %>
+        <%= render 'posts/post_author', :post => @nutrition_post.first %>
         <h6 class="category text-info"
-            style="color: <%= @Nutrition_post.first.category.title_color %>"><%= @Nutrition_post.first.category.name %></h6>
+            style="color: <%= @nutrition_post.first.category.title_color %>"><%= @nutrition_post.first.category.name %></h6>
         <h4 class="card-title">
-          <a href="<%= post_path(@Nutrition_post.first) %>"><%= @Nutrition_post.first.title %></a>
+          <a href="<%= post_path(@nutrition_post.first) %>"><%= @nutrition_post.first.title %></a>
         </h4>
         <p class="card-description">
-          <%= strip_tags(truncate_html(@Nutrition_post.first.content, length: 200, omission: '...' ))%>
+          <%= strip_tags(truncate_html(@nutrition_post.first.content, length: 200, omission: '...' ))%>
         </p>
       </div><!--end content-->
     </div><!--end card-blog-->

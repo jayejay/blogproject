@@ -5,7 +5,7 @@
     <div class="col-md-5">
       <a href="<%= post_path(post.id) %>">
         <div class="post-image-index">
-          <%= image_tag post.image_url, class: 'img img-raised'%>
+          <%= image_tag post.image_url.url, class: 'img img-raised'%>
         </div>
       </a>
         <!--Post-Tags-->

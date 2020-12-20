@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :image do
-    alt 'MyString'
-    hint 'MyString'
-    file 'MyString'
+    alt { 'MyString' }
+    hint { 'MyString' }
+    file { 'MyString' }
   end
 end

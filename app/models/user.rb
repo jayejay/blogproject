@@ -8,4 +8,12 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :comments
+
+  def image_url
+    if super.nil?
+      'https://via.placeholder.com/300.png/09f/fff'
+    else
+      super
+    end
+  end
 end
