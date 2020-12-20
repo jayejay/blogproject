@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
@@ -13,6 +15,5 @@ class CreateUsers < ActiveRecord::Migration[5.0]
 
     add_index :users, :nick_name
     add_index :users, :activation_key
-
   end
 end

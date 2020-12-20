@@ -1,5 +1,6 @@
-class ImagesController < ApplicationController
+# frozen_string_literal: true
 
+class ImagesController < ApplicationController
   def new
     @image = Image.build.params(image_params)
   end
@@ -12,10 +13,9 @@ class ImagesController < ApplicationController
 
   def image_params
     params.require(:image).permit(
-        :file,
-        :hint,
-        :alt,
+      :file,
+      :hint,
+      :alt
     )
   end
-
 end

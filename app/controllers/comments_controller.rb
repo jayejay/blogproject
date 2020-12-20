@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: %i[show edit update destroy]
 
   # GET /comments
   # GET /comments.json
@@ -9,8 +11,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1
   # GET /comments/1.json
-  def show
-  end
+  def show; end
 
   # GET /comments/new
   def new
@@ -18,8 +19,7 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /comments
   # POST /comments.json
@@ -29,7 +29,9 @@ class CommentsController < ApplicationController
     @comment.save
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to post_path(@comment.post, :anchor =>"new_comment"), notice: 'Comment was successfully created.' }
+        format.html do
+          redirect_to post_path(@comment.post, anchor: 'new_comment'), notice: 'Comment was successfully created.'
+        end
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -63,13 +65,15 @@ class CommentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_comment
-      @comment = Comment.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def comment_params
-      params.require(:comment).permit(:post_id, :author_name, :author_email, :content, :author_ip, :created_at, :approved, :parent_id, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def comment_params
+    params.require(:comment).permit(:post_id, :author_name, :author_email, :content, :author_ip, :created_at,
+                                    :approved, :parent_id, :user_id)
+  end
 end

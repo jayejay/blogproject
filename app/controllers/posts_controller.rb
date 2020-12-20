@@ -1,9 +1,10 @@
-class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :except => [:show, :index, :feed]
-  load_and_authorize_resource
-  skip_authorize_resource :only => :feed
+# frozen_string_literal: true
 
+class PostsController < ApplicationController
+  before_action :set_post, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[show index feed]
+  load_and_authorize_resource
+  skip_authorize_resource only: :feed
 
   # GET /posts
   # GET /posts.json
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
       @posts = Post.search(search_term).order(published_at: :desc).paginate(page: params[:page], per_page: 6)
     else
       @posts = Post.where(active: true).order(published_at: :desc)\
-        .paginate(page: params[:page], per_page: 6)
+                   .paginate(page: params[:page], per_page: 6)
     end
     @tags = Tag.all
   end
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
   def feed
     @posts = Post.where(active: true).order(published_at: :desc).first(5)
     respond_to do |format|
-      format.rss { render :layout => false }
+      format.rss { render layout: false }
     end
   end
 
@@ -36,14 +37,14 @@ class PostsController < ApplicationController
     @post = Post.new
     @rating = @post.build_rating
     @tags = Tag.all
-    render :layout => 'user_interface'
+    render layout: 'user_interface'
   end
 
   # GET /posts/1/edit
   def edit
     @rating = @post.rating
     @tags = Tag.all
-    render :layout => 'user_interface'
+    render layout: 'user_interface'
   end
 
   # POST /posts
@@ -87,20 +88,21 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def post_params
-      params.require(:post).permit(:title, :content, :image_url, :user_id, :published_at, :active, \
-        {tag_ids:[]}, :category_id, rating_attributes: [:id, :post_id, :gameplay, :graphics, :sound,\
-          :price_performance, :innovation, :total])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def post_params
+    params.require(:post).permit(:title, :content, :image_url, :user_id, :published_at, :active, \
+                                 { tag_ids: [] }, :category_id, rating_attributes: %i[id post_id gameplay graphics sound
+                                                                                      price_performance innovation total])
+  end
 end
 
 def rating_attributes(rating_attrs)
   self.rating = Client.find_or_initialize_by_id(rating_attrs.delete(:id))
-  self.rating.attributes = rating_attrs
+  rating.attributes = rating_attrs
 end

@@ -1,5 +1,5 @@
-class ChangeColumnPublishedAtFromPosts < ActiveRecord::Migration[5.0]
-  def change
+# frozen_string_literal: true
 
-  end
+class ChangeColumnPublishedAtFromPosts < ActiveRecord::Migration[5.0]
+  def change; end
 end

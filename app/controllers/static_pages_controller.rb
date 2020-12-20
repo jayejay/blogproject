@@ -1,20 +1,20 @@
+# frozen_string_literal: true
+
 class StaticPagesController < ApplicationController
-
   def welcome
-    render :layout => 'user_interface'
+    render layout: 'user_interface'
   end
 
-  def contact
-  end
+  def contact; end
 
   def landing_page
-    @gaming_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Gaming', true).\
-      order(published_at: :desc).limit(1)
-    @sports_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Sports', true).\
-      order(published_at: :desc).limit(1)
-    @Nutrition_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Nutrition', true).\
-      order(published_at: :desc).limit(1)
-    render :layout => 'wider_layout'
+    @gaming_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Gaming',
+                                               true).order(published_at: :desc).limit(1)
+    @sports_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Sports',
+                                               true).order(published_at: :desc).limit(1)
+    @Nutrition_post = Post.joins(:category).where('categories.name = ? AND active = ?', 'Nutrition',
+                                                  true).order(published_at: :desc).limit(1)
+    render layout: 'wider_layout'
   end
 
   def thanks
@@ -29,10 +29,7 @@ class StaticPagesController < ApplicationController
     end
   end
 
-  def impressum
-  end
+  def impressum; end
 
-  def datenschutz
-  end
-
+  def datenschutz; end
 end

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class TagsController < ApplicationController
-  before_action :set_tag, only: [:show, :edit, :update, :destroy]
+  before_action :set_tag, only: %i[show edit update destroy]
   load_and_authorize_resource
 
   # GET /tags
@@ -11,8 +13,8 @@ class TagsController < ApplicationController
   # GET /tags/1
   # GET /tags/1.json
   def show
-    @posts = Post.includes(:tags).where(tags: {id: params[:id]}, posts: {active: true}).order(created_at: :desc)\
-        .paginate(page: params[:page], per_page: 4)
+    @posts = Post.includes(:tags).where(tags: { id: params[:id] }, posts: { active: true }).order(created_at: :desc)\
+                 .paginate(page: params[:page], per_page: 4)
     render 'posts/index'
   end
 
@@ -22,8 +24,7 @@ class TagsController < ApplicationController
   end
 
   # GET /tags/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /tags
   # POST /tags.json
@@ -66,13 +67,14 @@ class TagsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_tag
-      @tag = Tag.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def tag_params
-      params.require(:tag).permit(:name, :color, :text_color)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_tag
+    @tag = Tag.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def tag_params
+    params.require(:tag).permit(:name, :color, :text_color)
+  end
 end
