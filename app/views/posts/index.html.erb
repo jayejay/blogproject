@@ -7,12 +7,17 @@
 </div>
 
 <div id="with-button">
-  <%= will_paginate @posts,  renderer: BootstrapPagination::Rails %>
+  <% unless Rails.env.test? %>
+    <%= will_paginate @posts,  renderer: BootstrapPagination::Rails %>
+  <% end %>
 </div>
 
-<% if @posts.next_page %>
-    <div id="load_more_posts" class="btn btn-primary btn-lg">Weitere Beiträge</div>
+<% unless Rails.env.test? %>
+  <% if @posts.next_page %>
+      <div id="load_more_posts" class="btn btn-primary btn-lg">Weitere Beiträge</div>
+  <% end %>
 <% end %>
+
 <br>
 
 

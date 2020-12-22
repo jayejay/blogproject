@@ -570,6 +570,7 @@ DEPENDENCIES
   coffee-rails
   config
   devise
+  factory_bot
   factory_bot_rails
   figaro
   fog

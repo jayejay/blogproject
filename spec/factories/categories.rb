@@ -2,5 +2,8 @@
 
 FactoryBot.define do
   factory :category do
+    name { 'Sports' }
+    background_color { 'white' }
+    title_color { 'black' }
   end
 end

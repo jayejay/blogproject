@@ -20,6 +20,7 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
+# rubocop:disable  Metrics/BlockLength
 RSpec.describe TagsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Tag. As you add validations to Tag, be sure to
@@ -32,9 +33,6 @@ RSpec.describe TagsController, type: :controller do
     skip('Add a hash of attributes invalid for your model')
   end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # TagsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe 'GET #index' do
@@ -54,6 +52,10 @@ RSpec.describe TagsController, type: :controller do
   end
 
   describe 'GET #new' do
+    before do
+      sign_in create(:user)
+    end
+
     it 'assigns a new tag as @tag' do
       get :new, params: {}, session: valid_session
       expect(assigns(:tag)).to be_a_new(Tag)
@@ -157,3 +159,4 @@ RSpec.describe TagsController, type: :controller do
     end
   end
 end
+# rubocop:enable  Metrics/BlockLength
