@@ -28,6 +28,8 @@ jobs:
       with:
         ruby-version: 2.7.2
     - name: Install dependencies
-      run: bundle install
+      run: |
+        sudo apt-get install build-essential libcurl4-openssl-dev
+        bundle install
     - name: Run tests
       run: bundle exec rake
