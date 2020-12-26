@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'tinymce textarea' , :rows => 30, :plugins => ['uploadimage']%>
+    <%= f.text_area :content, class: 'textarea' , :rows => 30, :plugins => ['uploadimage']%>
   </div>
   <div>
     <%= render 'static_pages/manual' %>
@@ -44,8 +44,8 @@
   <h3 class="title">Main Post Pic</h3>
 
   <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.file_field :image_url %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
 
   <h3 class="title">Category</h3>
@@ -119,7 +119,7 @@
   <div class="field">
     <%= f.label :published_at, 'Veröffentlichungsdatum'%>
     <% if post.persisted? %>
-      <%= f.date_field :published_at, :value => post.published_at.strftime('%Y-%m-%d') %>
+      <%= f.date_field :published_at, :value => post.published_at&.strftime('%Y-%m-%d') %>
     <% else %>
         <%= f.date_field :published_at, :value => Time.now.strftime('%Y-%m-%d') %>
     <% end %>

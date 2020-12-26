@@ -9,7 +9,6 @@
         Ihr glaubt so etwas kann es gar nicht geben? Falsch gedacht.
         Wir sind die Sporting Nerds: Zocker aus Leidenschaft;
         Fitness-Junkies durch und durch; Nerds mit Ambitionen!" />
-    <meta property="og:image" content="<%= image_url('material_logo.png') %>" />
 <% end %>
 
 <%= render 'shared/welcome_text' %>
@@ -28,7 +27,7 @@
          style="background-color: <%= @gaming_post.first.category.background_color %>">
       <%= link_to(@gaming_post.first) do %>
         <div class="card-image landing_page_images"
-             style="background-image: url('<%= @gaming_post.first.image_url %>')">
+             style="background-image: url('<%= @gaming_post.first.image.url %>')">
 
         </div>
       <% end %>
@@ -54,7 +53,7 @@
          style="background-color: <%= @sports_post.first.category.background_color %>">
       <%= link_to(@sports_post.first) do %>
         <div class="card-image landing_page_images"
-             style="background-image: url('<%= @sports_post.first.image_url %>')">
+             style="background-image: url('<%= @sports_post.first.image.url %>')">
         </div>
       <% end %>
 
@@ -78,7 +77,7 @@
         style="background-color: <%= @nutrition_post.first.category.background_color %>">
       <%= link_to(@nutrition_post.first) do %>
         <div class="card-image landing_page_images"
-             style="background-image: url('<%= @nutrition_post.first.image_url %>')">
+             style="background-image: url('<%= @nutrition_post.first.image.url %>')">
         </div>
       <% end %>
 

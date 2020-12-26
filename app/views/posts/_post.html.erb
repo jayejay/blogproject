@@ -5,7 +5,9 @@
     <div class="col-md-5">
       <a href="<%= post_path(post.id) %>">
         <div class="post-image-index">
-          <%= image_tag post.image_url.url, class: 'img img-raised'%>
+          <% if post.image.url.present? %>
+            <%= image_tag post.image.url, class: 'img img-raised'%>
+          <% end %>
         </div>
       </a>
         <!--Post-Tags-->

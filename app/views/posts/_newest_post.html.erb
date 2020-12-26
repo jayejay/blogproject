@@ -1,16 +1,16 @@
 <div class="newest_post">
-  <% post = Post.where(active: true).last(3) %>
+  <% posts = Post.where(active: true).last(3) %>
   <h3 class="title">Aktuelle Beiträge</h3>
 
-  <% unless post.nil?%>
-      <% post.each do |post| %>
+  <% unless posts.nil?%>
+      <% posts.each do |post| %>
         <h6 class="category text-info"
             style="color: <%= post.category.title_color %>">
           <%= post.category.name %></h6>
         <a href="<%= post_path(post) %>">
           <h6 class="title sidebar_newest_posts"><%= post.title %></h6>
         </a>
-        <%#= image_tag post.image_url, class:'new_post_image' %>
+        <%#= image_tag post.image.url, class:'new_post_image' %>
         <%#= truncate_html(post.content, length: 150, omission: '...')  %>
         <%#= link_to 'weiterlesen', post_path(post.id), class: 'btn btn-info' %>
       <% end %>

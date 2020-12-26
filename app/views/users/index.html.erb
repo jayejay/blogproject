@@ -18,7 +18,10 @@
         <div class="card card-profile card-plain">
           <div class="card-avatar">
             <!--<a href="#pablo">-->
-              <img class="img" src="<%= image_path(user.image_url) %>" />
+          <% if user.image.url.present? %>
+              <img class="img" src="<%= image_path(user.image.url) %>" />
+          <% end %>
+
             <!--</a>-->
           </div>
 

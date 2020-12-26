@@ -6,14 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, #:registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_one_attached :image
+
   has_many :posts
   has_many :comments
-
-  def image_url
-    if super.nil?
-      'https://via.placeholder.com/300.png/09f/fff'
-    else
-      super
-    end
-  end
 end

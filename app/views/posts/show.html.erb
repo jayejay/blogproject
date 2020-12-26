@@ -4,11 +4,13 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<%= @post.title %>" />
     <meta property="og:description" content="<%= strip_tags(truncate_html(@post.content, length: 200, omission: '...' )) %>" />
-    <meta property="og:image" content="<%= @post.image_url %>" />
+<!--    <meta property="og:image" content="<%#= @post.image.url %>" />-->
 <% end %>
 
   <div class="content_wrapper">
-    <%= image_tag @post.image_url.url, class: 'img img-raised post_main_image' %>
+    <% if @post.image.url.present? %>
+      <%= image_tag @post.image.url, class: 'img img-raised post_main_image' %>
+    <% end %>
     <%= render 'posts/post_author', post: @post %>
     <hr>
     <!--Share Buttons-->

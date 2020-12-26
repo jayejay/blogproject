@@ -24,7 +24,7 @@ class PostCreator
       p.content = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
       p.category = category
       p.active = true
-      p.image_url = '/test/'
+      p.image.url = '/test/'
       p.user = User.first
       p.save!
       puts "created #{index + 1}/5 Posts"
@@ -36,7 +36,7 @@ categories = %w[Gaming Sports Nutrition]
 
 categories.each do |category|
   c = Category.new(name: category)
-  c.background_color = 'blue'
+  c.background_color = '#80D8FF'
   c.title_color = 'red'
   c.save!
 end

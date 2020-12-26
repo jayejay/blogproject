@@ -9,7 +9,8 @@ class Post < ApplicationRecord
   has_one :rating
   accepts_nested_attributes_for :rating
 
-  mount_uploader :image_url, ImageUploader
+  # mount_uploader :image.url, ImageUploader
+  has_one_attached :image
 
   def get_rating_total
     if rating.nil?

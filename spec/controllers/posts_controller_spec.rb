@@ -20,8 +20,6 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-# rubocop:disable Metrics/BlockLength
-
 RSpec.describe PostsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Post. As you add validations to Post, be sure to
@@ -163,4 +161,3 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 end
-# rubocop:enable Metrics/BlockLength
