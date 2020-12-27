@@ -1,0 +1,164 @@
+/*****************/
+/*Post Show Page*/
+/***************/
+/* line 7, app/assets/stylesheets/posts.scss */
+.post_main_image {
+  width: 100%;
+  margin: 3% auto;
+}
+
+/* line 12, app/assets/stylesheets/posts.scss */
+.blog-text {
+  line-height: 1.5em;
+  color: #555555;
+  font-size: 1.35em;
+}
+
+/* line 17, app/assets/stylesheets/posts.scss */
+.blog-text a {
+  color: #00b0ff;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+/* line 23, app/assets/stylesheets/posts.scss */
+.blog-text a:hover {
+  color: #ffb74d;
+}
+
+/* line 28, app/assets/stylesheets/posts.scss */
+.pics, .normal_pics, .high_pics {
+  padding: 0.7%;
+  background-color: #263238;
+  font-size: 0.7em;
+  color: #eceff1;
+  font-weight: 400;
+  -webkit-box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* line 42, app/assets/stylesheets/posts.scss */
+.pics h6, .normal_pics h6, .high_pics h6 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+/* line 51, app/assets/stylesheets/posts.scss */
+.high_pics {
+  margin: 1% auto;
+}
+
+/* line 56, app/assets/stylesheets/posts.scss */
+.normal_pics {
+  margin: 1% 0;
+}
+
+/* line 61, app/assets/stylesheets/posts.scss */
+.tags {
+  padding-left: 0;
+}
+
+/******************/
+/*Post Index Page*/
+/****************/
+/* line 67, app/assets/stylesheets/posts.scss */
+.post-image-index {
+  margin: 10% 3%;
+  background-color: white;
+}
+
+/* line 72, app/assets/stylesheets/posts.scss */
+.posts_index {
+  padding: 3%;
+}
+
+/*********/
+/*Rating*/
+/*******/
+/* line 80, app/assets/stylesheets/posts.scss */
+#rating {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+/* line 84, app/assets/stylesheets/posts.scss */
+#rating div {
+  background-image: url("/assets/rating/rating_bar-19d769bbc023da6f87d322ea27578350899716650a52feacacd5d447280d2a46.png");
+  background-size: cover;
+  text-align: right;
+  color: whitesmoke;
+  margin-bottom: 1%;
+  padding: 1%;
+  font-size: 1.1em;
+}
+
+/* line 94, app/assets/stylesheets/posts.scss */
+#rating .rating_total {
+  background-image: url("/assets/rating/review_bar_total-cad69cd38ce7bef1f732fea9922e0ad6be8c753d278e1f4744671047e7dcb255.png");
+  color: #006064;
+  font-size: 1.3em;
+}
+
+/************/
+/*Post Form*/
+/**********/
+/* line 106, app/assets/stylesheets/posts.scss */
+.post_form {
+  background-color: white;
+  padding: 1%;
+}
+
+/* line 111, app/assets/stylesheets/posts.scss */
+.post_form_sidebar h3 {
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 7%;
+}
+
+/***************/
+/*Landing Page*/
+/*************/
+/* line 123, app/assets/stylesheets/posts.scss */
+.landing_page_images {
+  background-size: cover;
+  min-height: 200px;
+  max-height: 200px;
+}
+
+/* line 129, app/assets/stylesheets/posts.scss */
+#header_new_posts {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+/* line 134, app/assets/stylesheets/posts.scss */
+.card-image {
+  background-position: center;
+}
+
+/****************/
+/*Media queries*/
+/**************/
+@media only screen and (min-width: 768px) {
+  /* line 145, app/assets/stylesheets/posts.scss */
+  .content_wrapper {
+    -webkit-box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    padding: 3%;
+    margin-top: 2%;
+    border-radius: 0.1%;
+    margin-bottom: 2%;
+  }
+  /* line 157, app/assets/stylesheets/posts.scss */
+  #rating div {
+    font-size: 1.5em;
+  }
+  /* line 161, app/assets/stylesheets/posts.scss */
+  #rating .rating_total {
+    font-size: 1.7em;
+  }
+}

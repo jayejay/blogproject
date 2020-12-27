@@ -21,7 +21,7 @@
 
     <h6 class="category text-info"><%= @post.category.name %></h6>
     <%= content_tag(:h3,@post.title, class: 'title') %>
-    <%= content_tag(:div, @post.content.html_safe, class: 'blog-text') %>
+    <%= content_tag(:div, @post.content, class: 'blog-text') %>
     <br>
 
 

@@ -26,6 +26,7 @@ gem 'sqlite3'
 gem 'truncate_html'
 gem 'turbolinks'
 gem 'uglifier'
+gem 'webpacker'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 

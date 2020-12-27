@@ -1,4 +1,4 @@
-<%= form_for(post) do |f| %>
+<%= form_with model: post do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -19,8 +19,9 @@
 
   <div class="field">
     <%= f.label :content %>
-    <%= f.text_area :content, class: 'textarea' , :rows => 30, :plugins => ['uploadimage']%>
+    <%= f.rich_text_area :content %>
   </div>
+
   <div>
     <%= render 'static_pages/manual' %>
   </div>

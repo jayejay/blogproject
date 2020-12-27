@@ -1,0 +1,14 @@
+/***********/
+/*about us*/
+/*********/
+/* line 6, app/assets/stylesheets/users.scss */
+.about_us {
+  font-size: 1.3em;
+  line-height: 1.5;
+}
+
+/* line 11, app/assets/stylesheets/users.scss */
+.user_index {
+  font-size: 1.1em;
+  line-height: 1.5;
+}

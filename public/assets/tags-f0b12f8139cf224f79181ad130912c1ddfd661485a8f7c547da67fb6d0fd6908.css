@@ -1,0 +1,16 @@
+/******************/
+/*Tags index page*/
+/****************/
+/* line 6, app/assets/stylesheets/tags.scss */
+.table_tags {
+  width: 50%;
+}
+
+/*********************/
+/*Tags on side stuff*/
+/*******************/
+/* line 13, app/assets/stylesheets/tags.scss */
+.btn-success .badge {
+  color: #263238;
+  background-color: #eceff1;
+}

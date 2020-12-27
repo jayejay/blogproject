@@ -27,3 +27,19 @@ public/uploads/*
 
 # Ignore application configuration
 /config/application.yml
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+/pkg
+/test/mounted_app/test/dummy/log
+/test/test_app/log
+node_modules
+/test/test_app/tmp
+yarn-error.log*
+/log
+gemfiles/*.lock
+.DS_Store

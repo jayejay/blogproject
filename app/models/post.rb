@@ -12,6 +12,8 @@ class Post < ApplicationRecord
   # mount_uploader :image.url, ImageUploader
   has_one_attached :image
 
+  has_rich_text :content
+
   def get_rating_total
     if rating.nil?
       total = 0

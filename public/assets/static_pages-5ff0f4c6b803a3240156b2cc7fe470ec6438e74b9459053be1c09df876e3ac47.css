@@ -1,0 +1,35 @@
+/***************/
+/*Manual Modal*/
+/*************/
+/* line 4, app/assets/stylesheets/static_pages.scss */
+.modal-lg {
+  width: 1200px;
+}
+
+/**************/
+/*Datenschutz*/
+/************/
+/* line 11, app/assets/stylesheets/static_pages.scss */
+.google_adsense {
+  padding-left: 2%;
+}
+
+/***************/
+/*landing Page*/
+/*************/
+/* line 18, app/assets/stylesheets/static_pages.scss */
+.card-description {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* line 24, app/assets/stylesheets/static_pages.scss */
+.datenschutz a {
+  color: #00b0ff;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+/* line 30, app/assets/stylesheets/static_pages.scss */
+.datenschutz a:hover {
+  color: #ffb74d;
+}
